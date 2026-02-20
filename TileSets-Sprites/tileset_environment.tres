@@ -1,15 +1,15 @@
 [gd_resource type="TileSet" load_steps=11 format=3 uid="uid://b6thyybno765x"]
 
-[ext_resource type="Texture2D" uid="uid://8e27leqixwjm" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds.png" id="1_jpwi7"]
-[ext_resource type="Texture2D" uid="uid://lsiqbttocrfx" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap.png" id="2_mq8xn"]
-[ext_resource type="Texture2D" uid="uid://b2edpune4e44r" path="res://Assets/kenney_pixel-platformer-farm-expansion/Tilemap/tilemap - Farm.png" id="3_up74i"]
-[ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="4_mq8xn"]
-[ext_resource type="Texture2D" uid="uid://b66o467wuse7p" path="res://Assets/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap - Industrial.png" id="5_up74i"]
+[ext_resource type="Texture2D" uid="uid://8e27leqixwjm" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds.png" id="1_7xv4k"]
+[ext_resource type="Texture2D" uid="uid://lsiqbttocrfx" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap.png" id="2_a0lpc"]
+[ext_resource type="Texture2D" uid="uid://b2edpune4e44r" path="res://Assets/kenney_pixel-platformer-farm-expansion/Tilemap/tilemap - Farm.png" id="3_bx1qn"]
+[ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="4_gyrb4"]
+[ext_resource type="Texture2D" uid="uid://b66o467wuse7p" path="res://Assets/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap - Industrial.png" id="5_gcm8o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wuvu"]
-texture = ExtResource("1_jpwi7")
+texture = ExtResource("1_7xv4k")
 separation = Vector2i(1, 1)
-texture_region_size = Vector2i(24, 24)
+texture_region_size = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -36,7 +36,7 @@ texture_region_size = Vector2i(24, 24)
 7:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_451hi"]
-texture = ExtResource("2_mq8xn")
+texture = ExtResource("2_a0lpc")
 separation = Vector2i(1, 1)
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -221,7 +221,7 @@ texture_region_size = Vector2i(18, 18)
 19:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_audm6"]
-texture = ExtResource("3_up74i")
+texture = ExtResource("3_bx1qn")
 separation = Vector2i(1, 1)
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -338,7 +338,7 @@ texture_region_size = Vector2i(18, 18)
 15:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_up74i"]
-texture = ExtResource("4_mq8xn")
+texture = ExtResource("4_gyrb4")
 separation = Vector2i(1, 1)
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -455,7 +455,7 @@ texture_region_size = Vector2i(18, 18)
 15:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hphl"]
-texture = ExtResource("5_up74i")
+texture = ExtResource("5_gcm8o")
 separation = Vector2i(1, 1)
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
