@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 200
+const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -19,16 +19,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
-		$AnimatedSprite2D.play("Walk")
-		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		$AnimatedSprite2D.stop()
-		
-	if(Input.is_action_just_pressed("ui_left")):
-		$AnimatedSprite2D.flip_h = false
-	if(Input.is_action_just_pressed("ui_right")):
-		$AnimatedSprite2D.flip_h = true
-		
 
 	move_and_slide()
