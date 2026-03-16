@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=4 uid="uid://cgec1dq4oahyq"]
+
+[ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_2kshx"]
+[ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://player-1.tscn" id="2_p82y6"]
+[ext_resource type="PackedScene" uid="uid://brkor1gs3sm0w" path="res://native.tscn" id="3_kjjp4"]
+[ext_resource type="PackedScene" uid="uid://dkh0bsiyrx26j" path="res://pushable.tscn" id="4_y1d7k"]
+
+[node name="food_level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Level" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADY/xQAAwABAAAAAADZ/xQAAwACAAAAAADa/xQAAwACAAAAAADb/xQAAwACAAAAAADc/xQAAwACAAAAAADd/xQAAwACAAAAAADe/xQAAwACAAAAAADf/xQAAwACAAAAAADg/xQAAwADAAAAAADp/xAAAwAKAAAAAADq/xAAAwALAAAAAADr/xAAAwAMAAAAAADv/w8AAwAKAAAAAADw/w8AAwALAAAAAADx/w8AAwAMAAAAAADh/xQAAwACAAAAAADi/xQAAwACAAAAAADj/xQAAwACAAAAAADk/xQAAwACAAAAAADl/xQAAwACAAAAAADm/xQAAwACAAAAAADn/xQAAwACAAAAAADo/xQAAwACAAAAAADp/xQAAwACAAAAAADq/xQAAwACAAAAAADr/xQAAwACAAAAAADs/xQAAwACAAAAAADt/xQAAwACAAAAAADu/xQAAwACAAAAAADv/xQAAwACAAAAAADw/xQAAwACAAAAAADx/xQAAwACAAAAAADy/xQAAwACAAAAAADz/xQAAwACAAAAAAD0/xQAAwACAAAAAAD1/xQAAwACAAAAAAD2/xQAAwACAAAAAAD3/xQAAwACAAAAAAD4/xQAAwACAAAAAAD5/xQAAwACAAAAAAD6/xQAAwACAAAAAAD7/xQAAwACAAAAAAD8/xQAAwACAAAAAAD9/xQAAwACAAAAAAD+/xQAAwACAAAAAAD//xQAAwACAAAAAAAAABQAAwACAAAAAAABABQAAwACAAAAAAACABQAAwACAAAAAAADABQAAwACAAAAAAD+/xIAAwAKAAAAAAD//xIAAwALAAAAAAAAABIAAwAMAAAAAAD+/xMAAwALAAQAAAA=")
+tile_set = ExtResource("1_2kshx")
+
+[node name="Background" type="TileMapLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_p82y6")]
+position = Vector2(-619, 299)
+
+[node name="native" parent="." instance=ExtResource("3_kjjp4")]
+position = Vector2(-249, 225)
+
+[node name="pushable" parent="." instance=ExtResource("4_y1d7k")]
+position = Vector2(-536, 254)
