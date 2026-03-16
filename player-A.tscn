@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dk50dnc05e71v"]
 
-[ext_resource type="Script" uid="uid://dj8b4b2iejhy5" path="res://player_1.gd" id="1_kkwot"]
+[ext_resource type="Script" uid="uid://b8piwe66sx7cb" path="res://player_a.gd" id="1_kkwot"]
 [ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="2_ahobw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
@@ -24,7 +24,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_hqtel")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"A",
 "speed": 5.0
 }]
 
@@ -36,5 +36,4 @@ shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sh265")
-animation = &"Walk"
-frame_progress = 0.296176
+animation = &"A"

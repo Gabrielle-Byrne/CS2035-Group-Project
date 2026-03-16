@@ -18,9 +18,12 @@ position = Vector2(91, 143)
 
 [node name="Camera_A" type="Camera2D" parent="Player_A"]
 position = Vector2(-2, 1)
+zoom = Vector2(2, 2)
 
 [node name="Player_B" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(250, 147)
+position = Vector2(251, 144)
 script = ExtResource("4_1bvp3")
 
 [node name="Camera_B" type="Camera2D" parent="Player_B"]
+position = Vector2(-4, 0)
+zoom = Vector2(2, 2)
