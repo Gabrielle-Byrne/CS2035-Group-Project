@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 200
 const JUMP_VELOCITY = -600.0
+const PUSH_FORCE = 100
+const MAX_VELOCITY = 100
 
 func _ready():
 	$AnimatedSprite2D.play("B")
