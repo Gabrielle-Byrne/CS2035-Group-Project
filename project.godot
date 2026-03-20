@@ -66,5 +66,5 @@ b_jump={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.618758, 0.785091, 0.991983, 1)
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.618758, 0.785091, 0.991983, 1)
