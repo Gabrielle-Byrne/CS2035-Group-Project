@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkh0bsiyrx26j"]
 
-[ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="1_gt7b8"]
+[ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="1_lcg3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt7b8"]
 size = Vector2(22, 19)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkr03"]
-atlas = ExtResource("1_gt7b8")
+atlas = ExtResource("1_lcg3x")
 region = Rect2(75, 51, 25, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ob1iq"]
-atlas = ExtResource("1_gt7b8")
+atlas = ExtResource("1_lcg3x")
 region = Rect2(100, 51, 25, 23)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oremx"]

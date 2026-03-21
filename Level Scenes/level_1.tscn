@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://main.gd" id="1_nsi6k"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_c1vm0"]
-[ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://Player/player-B.tscn" id="3_hcikv"]
-[ext_resource type="Script" uid="uid://ctw3qion1jgoh" path="res://Player/player_b.gd" id="4_ytffv"]
+[ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_hcikv"]
+[ext_resource type="Script" uid="uid://b8piwe66sx7cb" path="res://Player/player_a.gd" id="4_nsi6k"]
 [ext_resource type="PackedScene" uid="uid://dhgxh8alcsgk3" path="res://Game Objects/block.tscn" id="5_gy5sw"]
 [ext_resource type="PackedScene" uid="uid://b0adr0djeb5td" path="res://Game Objects/key.tscn" id="6_eajg8"]
 
@@ -17,10 +17,10 @@ tile_set = ExtResource("2_c1vm0")
 
 [node name="Player_A" parent="." instance=ExtResource("3_hcikv")]
 position = Vector2(-367, -197)
+script = ExtResource("4_nsi6k")
 
 [node name="Player_B" parent="." instance=ExtResource("3_hcikv")]
 position = Vector2(-369, 155)
-script = ExtResource("4_ytffv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
