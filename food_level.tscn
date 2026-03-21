@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=4 uid="uid://c0ivw3xlujf4k"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_2kshx"]
-[ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://player-A.tscn" id="2_kjjp4"]
-[ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://player-B.tscn" id="3_y1d7k"]
+[ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_kjjp4"]
+[ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_y1d7k"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://carryableBlock.tscn" id="6_jhdv0"]
+
 
 [node name="Food_level" type="Node2D"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk50dnc05e71v"]
+[gd_scene load_steps=9 format=3 uid="uid://dwtl1qerlj0yo"]
 
 [ext_resource type="Script" uid="uid://b8piwe66sx7cb" path="res://player_a.gd" id="1_kkwot"]
 [ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="2_ahobw"]
