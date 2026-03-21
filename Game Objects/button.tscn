@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtixlilhvy54d"]
+
+[ext_resource type="Texture2D" uid="uid://lsiqbttocrfx" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap.png" id="1_4v8c2"]
+[ext_resource type="Script" uid="uid://1lfa48w5dvlu" path="res://Game Objects/button.gd" id="1_k12bb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k12bb"]
+atlas = ExtResource("1_4v8c2")
+region = Rect2(152, 95, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58356"]
+atlas = ExtResource("1_4v8c2")
+region = Rect2(133, 95, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hhg2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k12bb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58356")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdmgc"]
+size = Vector2(12, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12bb"]
+size = Vector2(18, 14)
+
+[node name="Button" type="Node2D"]
+script = ExtResource("1_k12bb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5hhg2")
+frame_progress = 0.00570459
+
+[node name="Button Top" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button Top"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_rdmgc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_k12bb")
+
+[connection signal="body_entered" from="Button Top" to="." method="_on_button_top_body_entered"]
+[connection signal="body_exited" from="Button Top" to="." method="_on_button_top_body_exited"]

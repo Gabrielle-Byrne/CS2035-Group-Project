@@ -1,34 +1,24 @@
-[gd_scene load_steps=7 format=4 uid="uid://bx8n7dfsjxer7"]
+[gd_scene load_steps=5 format=4 uid="uid://0cay7blph5gg"]
 
-[ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://main.gd" id="1_ihfcg"]
-[ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_rka8t"]
-[ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://player-B.tscn" id="3_5hph3"]
-[ext_resource type="Script" uid="uid://ctw3qion1jgoh" path="res://player_b.gd" id="4_j7kpp"]
-[ext_resource type="PackedScene" uid="uid://dhgxh8alcsgk3" path="res://block.tscn" id="5_rka8t"]
-[ext_resource type="PackedScene" uid="uid://b0adr0djeb5td" path="res://key.tscn" id="6_5hph3"]
+[ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_21t7g"]
+[ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_tsc8i"]
+[ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://Player/player-B.tscn" id="3_wnx3n"]
+[ext_resource type="PackedScene" uid="uid://dtixlilhvy54d" path="res://Game Objects/button.tscn" id="4_cbjjc"]
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_ihfcg")
+[node name="Level3" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-40, -18)
 tile_map_data = PackedByteArray("AAADAA0AAQACAAAAAAAEAA0AAQACAAAAAAAFAA0AAQACAAAAAAAGAA0AAQACAAAAAAAHAA0AAQACAAAAAAAIAA0AAQACAAAAAAAJAA0AAQACAAAAAAAKAA0AAQACAAAAAAALAA0AAQACAAAAAAAMAA0AAQACAAAAAADq//z/AQACAAAAAADr//z/AQACAAAAAADs//z/AQACAAAAAADt//z/AQACAAAAAADu//z/AQACAAAAAADv//z/AQACAAAAAADw//z/AQACAAAAAADx//z/AQACAAAAAADy//z/AQACAAAAAADz//z/AQACAAAAAAD0//z/AQACAAAAAAD1//z/AQACAAAAAAD2//z/AQACAAAAAAD3//z/AQACAAAAAAD4//z/AQACAAAAAAD5//z/AQACAAAAAAD6//z/AQACAAAAAAD7//z/AQACAAAAAAD8//z/AQACAAAAAAD9//z/AQACAAAAAAD+//z/AQACAAAAAAD///z/AQACAAAAAAAAAPz/AQACAAAAAAABAPz/AQACAAAAAAACAPz/AQACAAAAAAADAPz/AQACAAAAAAAEAPz/AQACAAAAAAAFAPz/AQACAAAAAAAGAPz/AQACAAAAAAAHAPz/AQACAAAAAAAIAPz/AQACAAAAAAAJAPz/AQACAAAAAAAKAPz/AQACAAAAAAALAPz/AQACAAAAAADq/w0AAQACAAAAAADr/w0AAQACAAAAAADs/w0AAQACAAAAAADt/w0AAQACAAAAAADu/w0AAQACAAAAAADv/w0AAQACAAAAAADw/w0AAQACAAAAAADx/w0AAQACAAAAAADy/w0AAQACAAAAAADz/w0AAQACAAAAAAD0/w0AAQACAAAAAAD1/w0AAQACAAAAAAD2/w0AAQACAAAAAAD3/w0AAQACAAAAAAD4/w0AAQACAAAAAAD5/w0AAQACAAAAAAD6/w0AAQACAAAAAAD7/w0AAQACAAAAAAD8/w0AAQACAAAAAAD9/w0AAQACAAAAAAD+/w0AAQACAAAAAAD//w0AAQACAAAAAAAAAA0AAQACAAAAAAABAA0AAQACAAAAAAACAA0AAQACAAAAAADo/w0AAQACAAAAAADp/w0AAQACAAAAAAAMAP3/AQACAAAAAAANAP7/AQACAAAAAAANAAwAAQACAAAAAAAOAAsAAQACAAAAAAAPAAoAAQACAAAAAAAQAAkAAQACAAAAAAARAAgAAQACAAAAAAAOAP//AQACAAAAAAAPAAAAAQACAAAAAAAQAAEAAQACAAAAAAARAAIAAQACAAAAAAASAAgAAQACAAAAAAATAAgAAQACAAAAAAAUAAgAAQACAAAAAAAVAAgAAQACAAAAAAAWAAgAAQACAAAAAAAXAAgAAQACAAAAAAAYAAgAAQACAAAAAAAZAAgAAQACAAAAAAAaAAgAAQACAAAAAAAbAAgAAQACAAAAAAAcAAgAAQACAAAAAAASAAMAAQACAAAAAAD4/wwAAQACAAAAAAD4/wsAAQACAAAAAAD4/woAAQACAAAAAAD4/wkAAQACAAAAAAD4/wgAAQACAAAAAAD4/wcAAQACAAAAAAD4/wYAAQACAAAAAAD4/wUAAQACAAAAAAD4/wQAAQACAAAAAAD4/wMAAQACAAAAAADo//z/AQACAAAAAADp//z/AQACAAAAAAD6//n/AQAAAAAAAAD6//j/AQAAAAAAAAD6//f/AQAAAAAAAAD6//b/AQAAAAAAAAD7//b/AQAAAAAAAAD9//b/AQAAAAAAAAD8//b/AQAAAAAAAAD+//b/AQAAAAAAAAD+//f/AQAAAAAAAAD+//j/AQAAAAAAAAD+//n/AQAAAAAAAAD+//r/AQAAAAAAAAD+//v/AQAAAAAAAAA=")
-tile_set = ExtResource("2_rka8t")
+tile_set = ExtResource("1_21t7g")
 
-[node name="Player_A" parent="." instance=ExtResource("3_5hph3")]
-position = Vector2(-367, -197)
+[node name="Player" parent="." instance=ExtResource("2_tsc8i")]
+position = Vector2(-90, 163)
 
-[node name="Player_B" parent="." instance=ExtResource("3_5hph3")]
-position = Vector2(-369, 155)
-script = ExtResource("4_j7kpp")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Player2" parent="." instance=ExtResource("3_wnx3n")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
 
-[node name="Block" parent="." instance=ExtResource("5_rka8t")]
-position = Vector2(-127, -93)
-
-[node name="Key" parent="." instance=ExtResource("6_5hph3")]
-position = Vector2(-158, 12)
+[node name="Button2" parent="." instance=ExtResource("4_cbjjc")]
+position = Vector2(112, 180)
