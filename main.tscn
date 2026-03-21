@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://player-B.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://ctw3qion1jgoh" path="res://player_b.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://Player/player-B.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://ctw3qion1jgoh" path="res://Player/player_b.gd" id="4_1bvp3"]
+
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h2yge")
