@@ -1,6 +1,10 @@
 [gd_scene load_steps=5 format=4 uid="uid://vrgrmyi7xcpq"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_06t4h"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://Player/player-B.tscn" id="2_7vrkn"]
+>>>>>>> main
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_06t4h"]
 

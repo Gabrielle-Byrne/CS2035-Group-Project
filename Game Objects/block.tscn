@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhgxh8alcsgk3"]
 
 [ext_resource type="Texture2D" uid="uid://lsiqbttocrfx" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap.png" id="1_im0tn"]
-[ext_resource type="Script" uid="uid://dij7udhyecspr" path="res://block.gd" id="1_xfwl5"]
+[ext_resource type="Script" uid="uid://dij7udhyecspr" path="res://Game Objects/block.gd" id="1_xfwl5"]
+
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_im0tn"]
 _surfaces = [{
