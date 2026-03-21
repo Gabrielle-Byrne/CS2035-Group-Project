@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://k7r2du1a4ndx"]
+[gd_scene load_steps=4 format=3 uid="uid://cy3ggnghsl85s"]
 
-[ext_resource type="Script" path="res://carryable_block.gd" id="1_bu482"]
+[ext_resource type="Script" uid="uid://cewufjrlk22j8" path="res://Game Objects/carryable_block.gd" id="1_bu482"]
 [ext_resource type="Texture2D" uid="uid://28sjifctr1oh" path="res://TileSets-Sprites/carriableBlock.png" id="1_nt5gc"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu482"]
 size = Vector2(18, 18)
