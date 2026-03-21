@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=4 uid="uid://c0ivw3xlujf4k"]
+
+[ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_2kshx"]
+[ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://player-A.tscn" id="2_kjjp4"]
+[ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://player-B.tscn" id="3_y1d7k"]
+[ext_resource type="PackedScene" uid="uid://dhgxh8alcsgk3" path="res://block.tscn" id="4_y1d7k"]
+[ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://carryableBlock.tscn" id="6_jhdv0"]
+
+[node name="Food_level" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAA4AAwABAAAAAAABAA4AAwACAAAAAAACAA4AAwADAAAAAAADAA4AAwABAAAAAAAEAA4AAwACAAAAAAAFAA4AAwADAAAAAAAGAA4AAwABAAAAAAAHAA4AAwACAAAAAAAIAA4AAwADAAAAAAAJAA4AAwABAAAAAAAKAA4AAwACAAAAAAALAA4AAwADAAAAAAAMAA4AAwABAAAAAAANAA4AAwACAAAAAAAOAA4AAwADAAAAAAAPAA4AAwABAAAAAAAQAA4AAwACAAAAAAARAA4AAwADAAAAAAASAA4AAwABAAAAAAATAA4AAwACAAAAAAAUAA4AAwADAAAAAAAVAA4AAwABAAAAAAAWAA4AAwACAAAAAAAXAA4AAwADAAAAAAA=")
+tile_set = ExtResource("1_2kshx")
+
+[node name="Player_A" parent="." instance=ExtResource("2_kjjp4")]
+position = Vector2(122, 138)
+
+[node name="Player_B" parent="." instance=ExtResource("3_y1d7k")]
+position = Vector2(278, 160)
+
+[node name="Block" parent="." instance=ExtResource("4_y1d7k")]
+position = Vector2(22, 189)
+
+[node name="carryableBlock" parent="." instance=ExtResource("6_jhdv0")]
+position = Vector2(161, 104)

@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dk25xtpxvs33e"]
+[gd_scene load_steps=5 format=4 uid="uid://vrgrmyi7xcpq"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_06t4h"]
+<<<<<<< HEAD
+=======
 [ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://Player/player-B.tscn" id="2_7vrkn"]
+>>>>>>> main
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_06t4h"]
 
@@ -22,6 +25,3 @@ tile_set = ExtResource("1_06t4h")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fu7sn")
-
-[node name="Player" parent="." instance=ExtResource("2_7vrkn")]
-position = Vector2(609, 420)

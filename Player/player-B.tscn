@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuuqyr25sl0g3"]
+[gd_scene load_steps=9 format=3 uid="uid://d0o22jfl4fy15"]
 
 [ext_resource type="Script" uid="uid://ctw3qion1jgoh" path="res://Player/player_b.gd" id="1_6tpov"]
 [ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="1_62tqs"]
@@ -47,7 +47,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player_B" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_6tpov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

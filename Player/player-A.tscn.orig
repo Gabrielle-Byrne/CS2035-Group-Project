@@ -47,10 +47,14 @@ animations = [{
 "speed": 5.0
 }]
 
+<<<<<<< HEAD:player-A.tscn
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkwot"]
 size = Vector2(28, 24)
 
-[node name="Player_A" type="CharacterBody2D" groups=["Player"]]
+[node name="Player_A" type="CharacterBody2D"]
+=======
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+>>>>>>> main:Player/player-A.tscn
 script = ExtResource("1_kkwot")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
