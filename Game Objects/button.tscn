@@ -41,7 +41,7 @@ script = ExtResource("1_k12bb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5hhg2")
-animation = &"pressed"
+frame_progress = 0.00570459
 
 [node name="Button Top" type="Area2D" parent="."]
 visible = false
