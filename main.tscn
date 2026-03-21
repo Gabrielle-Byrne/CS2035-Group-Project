@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_ig7tw"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://player-A.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://player-B.tscn" id="4_lquwl"]
+=======
 [ext_resource type="PackedScene" uid="uid://cuuqyr25sl0g3" path="res://Player/player-B.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://ctw3qion1jgoh" path="res://Player/player_b.gd" id="4_1bvp3"]
 
+>>>>>>> main
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h2yge")
@@ -18,19 +23,8 @@ tile_set = ExtResource("1_ig7tw")
 position = Vector2(135, 110)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Player_A" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(91, 143)
+[node name="Player_A" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(78, 146)
 
-[node name="Camera_A" type="Camera2D" parent="Player_A"]
-position = Vector2(-93, -142)
-zoom = Vector2(2, 2)
-
-[node name="Player_B" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(251, 144)
-script = ExtResource("4_1bvp3")
-
-[node name="Camera_B" type="Camera2D" parent="Player_B"]
-position = Vector2(-4, 0)
-zoom = Vector2(2, 2)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Player_B" parent="." instance=ExtResource("4_lquwl")]
+position = Vector2(208, 135)
