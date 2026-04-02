@@ -1,10 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://c0ivw3xlujf4k"]
+[gd_scene load_steps=5 format=4 uid="uid://b2etpdsp4hftq"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_2rxg5"]
 [ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_hfkyv"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_wtoaq"]
-[ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="4_4k2bo"]
-
+[ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="4_2rxg5"]
 
 [node name="Food_level" type="Node2D"]
 
@@ -18,5 +17,8 @@ position = Vector2(122, 138)
 [node name="Player_B" parent="." instance=ExtResource("3_wtoaq")]
 position = Vector2(278, 160)
 
-[node name="carryableBlock" parent="." instance=ExtResource("4_4k2bo")]
-position = Vector2(196, 209)
+[node name="carryableBlock" parent="." instance=ExtResource("4_2rxg5")]
+position = Vector2(195, 74)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
