@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1cxtanca3cgl"]
+
+[ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="1_fhekt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft68a"]
+size = Vector2(24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhekt"]
+atlas = ExtResource("1_fhekt")
+region = Rect2(125, 52, 25, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft68a"]
+atlas = ExtResource("1_fhekt")
+region = Rect2(75, 52, 25, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjs8g"]
+atlas = ExtResource("1_fhekt")
+region = Rect2(100, 52, 25, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7imd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhekt")
+}],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft68a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjs8g")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="Hungry" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ft68a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.25, 0)
+scale = Vector2(1.02, 1)
+sprite_frames = SubResource("SpriteFrames_h7imd")
+animation = &"walking"
