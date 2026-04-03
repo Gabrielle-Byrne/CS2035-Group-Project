@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_cmnf2"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_7ohxt"]
 [ext_resource type="PackedScene" uid="uid://dtixlilhvy54d" path="res://Game Objects/button.tscn" id="4_0q5if"]
-[ext_resource type="PackedScene" uid="uid://dedp1f5x5ogk0" path="res://Game Objects/cloud.tscn" id="5_cmnf2"]
+[ext_resource type="PackedScene" uid="uid://dedp1f5x5ogk0" path="res://Game Objects/Snow_level_Object/cloud.tscn" id="5_cmnf2"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7ohxt"]
 polygon = PackedVector2Array(93, 14, 155, 154, 17, 154)

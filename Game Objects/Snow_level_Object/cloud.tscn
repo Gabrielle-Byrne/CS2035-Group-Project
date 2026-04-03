@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://dedp1f5x5ogk0"]
 
-[ext_resource type="Script" uid="uid://crxf2ulcnj86o" path="res://Game Objects/cloud.gd" id="1_2m3ul"]
+[ext_resource type="Script" uid="uid://crxf2ulcnj86o" path="res://Game Objects/Snow_level_Object/cloud.gd" id="1_2m3ul"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_lygkj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2m3ul"]
