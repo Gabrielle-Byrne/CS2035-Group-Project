@@ -26,7 +26,8 @@ func _ready():
 	right_wander_bounds = self.position + Vector2(0, 100)
 
 func _physics_process(delta: float) -> void:
-	pass
+	handle_movement(delta)
+	look_for_food()
 	
 func look_for_food():
 	if ray_cast.is_colliding():
@@ -34,11 +35,25 @@ func look_for_food():
 		if collider == foodToFollow:
 			chase_food()
 		elif current_state == States.CHASE:
-			pass
+			stop_chase()
+	elif current_state == States.CHASE:
+		stop_chase()
 			
 func chase_food() -> void:
 	timer.stop()
 	current_state = States.CHASE
+
+func stop_chase() -> void:
+	if timer.time_left <= 0:
+		timer.start()
+
+func handle_movement(delta: float) -> void:
+	if current_state == States.WANDER:
+		velocity = velocity.move_toward(direction * SPEED, ACCELERATION * delta)
+	elif current_state == States.CHASE:
+		velocity = velocity.move_toward(direction * CHASE_SPEED, ACCELERATION * delta)
+	move_and_slide()
+
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
