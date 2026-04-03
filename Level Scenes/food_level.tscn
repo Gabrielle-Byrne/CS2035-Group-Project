@@ -24,5 +24,6 @@ position = Vector2(195, 74)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
 
-[node name="Hungry" parent="." instance=ExtResource("5_hfkyv")]
+[node name="Hungry" parent="." node_paths=PackedStringArray("foodToFollow") instance=ExtResource("5_hfkyv")]
 position = Vector2(361, 119)
+foodToFollow = NodePath("../Player_A")
