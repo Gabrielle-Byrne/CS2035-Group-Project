@@ -26,8 +26,13 @@ func _ready():
 	right_wander_bounds = self.position + Vector2(0, 100)
 
 func _physics_process(delta: float) -> void:
+	handle_gravity(delta)
 	handle_movement(delta)
+	change_direction()
 	look_for_food()
+	
+	if current_state == States.WANDER or current_state == States.CHASE:
+		sprite.play("walking")
 	
 func look_for_food():
 	if ray_cast.is_colliding():
@@ -54,6 +59,24 @@ func handle_movement(delta: float) -> void:
 		velocity = velocity.move_toward(direction * CHASE_SPEED, ACCELERATION * delta)
 	move_and_slide()
 
+func change_direction() -> void:
+	if current_state == States.WANDER:
+		if sprite.flip_h:
+			if self.position.x <= right_wander_bounds.x:
+				direction = Vector2(1, 0)
+			else:
+				sprite.flip_h = false
+				ray_cast.target_position = Vector2(-100, 0)
+		else:
+			if self.position.x >= left_wander_bounds.x:
+				direction = Vector2(-1, 0)
+			else:
+				sprite.flip_h = true
+				ray_cast.target_position = Vector2(100, 0)
+
+func handle_gravity(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	current_state = States.WANDER # Replace with function body.

@@ -25,4 +25,4 @@ position = Vector2(195, 74)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Hungry" parent="." instance=ExtResource("5_hfkyv")]
-position = Vector2(353, 199)
+position = Vector2(361, 119)

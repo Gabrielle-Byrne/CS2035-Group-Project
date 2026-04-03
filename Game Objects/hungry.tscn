@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cpnepo8dc22y2" path="res://Game Objects/hungry.gd" id="1_ft68a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft68a"]
-size = Vector2(48, 42)
+size = Vector2(47, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhekt"]
 atlas = ExtResource("1_fhekt")
@@ -44,11 +44,12 @@ animations = [{
 script = ExtResource("1_ft68a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_ft68a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.92, 1.90909)
+position = Vector2(0, 0.500005)
+scale = Vector2(1.92, 1.95455)
 sprite_frames = SubResource("SpriteFrames_h7imd")
 animation = &"walking"
 
