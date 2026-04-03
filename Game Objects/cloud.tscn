@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=4 uid="uid://dedp1f5x5ogk0"]
+
+[ext_resource type="Script" uid="uid://crxf2ulcnj86o" path="res://Game Objects/cloud.gd" id="1_2m3ul"]
+[ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_lygkj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2m3ul"]
+radius = 14.0
+height = 50.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2m3ul"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(30, 15, 10)
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 61.926
+gravity = Vector3(-100, 0, 0)
+turbulence_noise_strength = 5.39
+turbulence_noise_speed_random = 1.77
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[node name="Cloud" type="Node2D"]
+script = ExtResource("1_2m3ul")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAQANAAcAAAABAAEAAQAOAAcAAAACAAEAAQAPAAcAAAAAAAAAAQAPAAcAADABAAAAAQAOAAcAADACAAAAAQANAAcAADA=")
+tile_set = ExtResource("1_lygkj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(24, 16)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2m3ul")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(24, 16)
+amount = 10000
+lifetime = 6.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_2m3ul")
+
+[node name="BlowTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="BlowTimer" to="." method="_on_blow_timer_timeout"]

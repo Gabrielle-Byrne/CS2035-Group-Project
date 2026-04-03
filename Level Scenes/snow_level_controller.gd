@@ -1,0 +1,19 @@
+extends Node2D
+
+var wind_scene = load("res://Game Objects/wind.tscn")
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_cloud_blow() -> void:
+	#var wind = wind_scene.instantiate()
+	#wind.position = $Enemies/Cloud.position
+	#add_child(wind)
+	pass
