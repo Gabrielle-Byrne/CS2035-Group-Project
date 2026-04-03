@@ -19,6 +19,9 @@ func _ready():
 func _process(_delta):
 	can_change = true
 	
+	if Input.is_action_just_pressed("reset"):
+		pass
+	
 	match state:
 		Player_A:
 			if Input.is_action_just_pressed("switch_character") and can_change == true:

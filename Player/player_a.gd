@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 200
 const JUMP_VELOCITY = -400.0
 const PUSH_FORCE = 50
@@ -26,6 +25,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("a_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	if position.y < -1000:
+		position.y = 100;
+		position.x = 100;
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
