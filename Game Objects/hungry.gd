@@ -73,7 +73,22 @@ func change_direction() -> void:
 			else:
 				sprite.flip_h = true
 				ray_cast.target_position = Vector2(100, 0)
-
+	elif current_state == States.CHASE:
+		#Switch to following food object. Set direction to where food is
+		direction = (foodToFollow.position - self.position).normalized()
+		
+		#Get current direction
+		direction = sign(direction)  
+		#If food is on the right
+		if direction.x == 1:
+			#flip to right
+			sprite.flip_h = true
+			ray_cast.target_position = Vector2(100, 0)
+		else:
+			#flip to left
+			sprite.flip_h = false
+			ray_cast.target_position = Vector2(-100, 0)
+			
 func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
