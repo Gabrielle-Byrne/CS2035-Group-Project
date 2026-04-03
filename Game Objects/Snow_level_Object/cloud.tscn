@@ -13,12 +13,10 @@ emission_shape_scale = Vector3(30, 15, 10)
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 61.926
-gravity = Vector3(-100, 0, 0)
+gravity = Vector3(-200, 0, 0)
 turbulence_noise_strength = 5.39
 turbulence_noise_speed_random = 1.77
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.0
+collision_mode = 2
 
 [node name="Cloud" type="Node2D"]
 script = ExtResource("1_2m3ul")

@@ -5,10 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_cmnf2"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_7ohxt"]
 [ext_resource type="PackedScene" uid="uid://dtixlilhvy54d" path="res://Game Objects/button.tscn" id="4_0q5if"]
+[ext_resource type="PackedScene" uid="uid://bwkhhl2yw3bfy" path="res://Game Objects/Snow_level_Object/snow_platform.tscn" id="4_458hi"]
 [ext_resource type="PackedScene" uid="uid://dedp1f5x5ogk0" path="res://Game Objects/Snow_level_Object/cloud.tscn" id="5_cmnf2"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7ohxt"]
-polygon = PackedVector2Array(93, 14, 155, 154, 17, 154)
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_0q5if")
@@ -25,10 +23,8 @@ tile_set = ExtResource("1_ligv6")
 [node name="Button2" parent="Level" instance=ExtResource("4_0q5if")]
 position = Vector2(129, 199)
 
-[node name="Platform" type="Node2D" parent="Level"]
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Level/Platform"]
-occluder = SubResource("OccluderPolygon2D_7ohxt")
+[node name="SnowPlatform" parent="Level" instance=ExtResource("4_458hi")]
+position = Vector2(149, 81)
 
 [node name="Players" type="Node2D" parent="."]
 
