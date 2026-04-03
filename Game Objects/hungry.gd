@@ -28,6 +28,17 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	pass
 	
+func look_for_food():
+	if ray_cast.is_colliding():
+		var collider = ray_cast.get_collider()
+		if collider == foodToFollow:
+			chase_food()
+		elif current_state == States.CHASE:
+			pass
+			
+func chase_food() -> void:
+	timer.stop()
+	current_state = States.CHASE
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
