@@ -9,7 +9,7 @@ polygon = PackedVector2Array(-1, -33, 19, -33, 19, 49, -1, 49)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbgp1"]
 size = Vector2(18, 82)
 
-[node name="SnowPlatform" type="Node2D"]
+[node name="SnowPlatform" type="Node2D" groups=["Wind_Blocker"]]
 script = ExtResource("1_itw8e")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

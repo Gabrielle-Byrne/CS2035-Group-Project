@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 const PUSH_FORCE = 50
 const MAX_VELOCITY = 100
 
+@export var wind_speed = 0
+
 var is_in_range: bool = false
 var target_object: Node2D
 
@@ -56,6 +58,9 @@ func _physics_process(delta: float) -> void:
 		drop_object()
 	else:
 		pickup_object()
+		
+	velocity.x -= wind_speed
+	wind_speed = 0
 	move_and_slide()
 
 func pickup_object() -> void:

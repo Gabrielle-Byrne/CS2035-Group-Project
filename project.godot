@@ -26,6 +26,7 @@ window/stretch/scale_mode="integer"
 Block=""
 Key=""
 Player=""
+Wind_Blocker=""
 
 [input]
 

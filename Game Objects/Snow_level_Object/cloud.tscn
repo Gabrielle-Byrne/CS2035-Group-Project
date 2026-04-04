@@ -39,8 +39,32 @@ lifetime = 6.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_2m3ul")
 
-[node name="BlowTimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
+[node name="WindAreas" type="Node2D" parent="."]
 
-[connection signal="timeout" from="BlowTimer" to="." method="_on_blow_timer_timeout"]
+[node name="WindArea1" type="RayCast2D" parent="WindAreas"]
+position = Vector2(25, 16)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea2" type="RayCast2D" parent="WindAreas"]
+position = Vector2(24, 20)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea3" type="RayCast2D" parent="WindAreas"]
+position = Vector2(23, 24)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea4" type="RayCast2D" parent="WindAreas"]
+position = Vector2(24, 27)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea5" type="RayCast2D" parent="WindAreas"]
+position = Vector2(23, 12)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea6" type="RayCast2D" parent="WindAreas"]
+position = Vector2(23, 8)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea7" type="RayCast2D" parent="WindAreas"]
+position = Vector2(24, 4)
+target_position = Vector2(-700, 0)
