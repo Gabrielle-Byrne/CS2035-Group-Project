@@ -13,6 +13,10 @@ var direction: Vector2
 var left_wander_bounds: Vector2
 var right_wander_bounds: Vector2
 
+var angle_cone_of_vision := deg_to_rad(30.0)
+var max_view_distance:= 100
+var angle_between_rays := deg_to_rad(5.0)
+
 enum States{
 	WANDER,
 	SLEEP,
@@ -28,12 +32,23 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
 	handle_movement(delta)
+	generate_raycast()
 	change_direction()
 	look_for_food()
 	
 	if current_state == States.WANDER or current_state == States.CHASE:
 		sprite.play("walking")
+
+func generate_raycast() -> void:
+	var ray_count = angle_cone_of_vision/angle_between_rays
 	
+	for i in ray_count:
+		var ray = RayCast2D.new()
+		var angle: float = angle_between_rays * (i - ray_count/2)
+		ray.target_position = Vector2.LEFT.rotated(angle) * max_view_distance
+		add_child(ray)
+		ray.enabled = true
+
 func look_for_food():
 	if ray_cast.is_colliding():
 		var collider = ray_cast.get_collider()
