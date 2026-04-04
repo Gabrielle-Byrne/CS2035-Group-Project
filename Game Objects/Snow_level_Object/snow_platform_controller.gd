@@ -1,5 +1,7 @@
 extends Node2D
 
+const SPEED = 50
+var direction = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,5 +9,17 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta: float) -> void:
+	position.y = position.y + direction * SPEED * delta
+	
+
+
+
+func _on_button_up_button_pressed() -> void:
+	direction = -1
+
+func _on_button_down_button_pressed() -> void:
+	direction = 1
+
+func _on_button_unpressed() -> void:
+	direction = 0
