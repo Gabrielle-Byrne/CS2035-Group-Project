@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bn0u21bb062kv"]
+[gd_scene load_steps=19 format=4 uid="uid://bn0u21bb062kv"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_mkvud"]
 [ext_resource type="Script" uid="uid://cqlxinfo74wid" path="res://Level Scenes/final_level.gd" id="1_ml21q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="4_v47br"]
 [ext_resource type="Texture2D" uid="uid://b66o467wuse7p" path="res://Assets/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap - Industrial.png" id="5_11xol"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="10_v47br"]
+[ext_resource type="PackedScene" uid="uid://cfionpmso6kyh" path="res://Game Objects/moving_platform.tscn" id="11_11xol"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_24rg2"]
 tile_data = PackedInt32Array(0, 65539, 0, 1, 131075, 0, 2, 196611, 0)
@@ -655,7 +656,7 @@ tile_set = ExtResource("1_mkvud")
 [node name="DecorationsBack" type="TileMapLayer" parent="Map"]
 z_index = 1
 position = Vector2(-170, 55)
-tile_map_data = PackedByteArray("AADu//f/BAADAAUAAADu//j/BAAHAAEAAADu//n/BAAHAAEAAADu//r/BAAHAAEAAADu//v/BAAHAAEAAADu//z/BAAHAAEAAADu//3/BAAHAAEAAADu//7/BAAHAAEAAADu////BAAHAAEAAADu/wAABAAHAAEAAADu/wEABAAHAAEAAADu/wIABAAHAAEAAADu/wMABAAHAAEAAADu/wQABAAHAAEAAADu/wUABAAHAAEAAADu/wYABAAHAAEAAADu/wcABAAHAAEAAADu/wgABAAHAAEAAADu/wkABAAHAAEAAADu/woABAAHAAEAAADu/wsABAAHAAMAAAD4/wIABAAIAAAAAAD4/wMABAAIAAEAAAD4/wQABAAIAAEAAAD4/wUABAAIAAEAAAD4/wYABAAIAAEAAAD4/wcABAAIAAEAAAD4/wgABAAIAAEAAAD4/wkABAAIAAQAAAD3/wsABAANAAQAAAD3/wwABAAOAAQAAADt//f/BAAHAAEAAGDr//f/BAAHAAEAAGDs//f/BAAHAAEAAGDq//f/BAAHAAEAAGDp//f/BAAHAAEAAGDo//f/BAAHAAEAAGDn//f/BAAHAAEAAGAiAPj/BAADAAUAAAAiAPn/BAAHAAEAAAAiAPr/BAAHAAEAAAAiAPv/BAAHAAEAAAAiAPz/BAAHAAEAAAAiAP3/BAAHAAEAAAAiAP7/BAAHAAEAAAAiAP//BAAHAAEAAAAiAAAABAAHAAEAAAAiAAEABAAHAAEAAAAiAAIABAAHAAEAAAAiAAMABAAHAAEAAAAiAAQABAAHAAEAAAAiAAUABAAHAAEAAAAiAAYABAAHAAEAAAAiAAcABAAHAAEAAAAiAAgABAAHAAEAAAAiAAkABAAHAAEAAAAiAAoABAAHAAEAAAAiAAsABAAHAAMAAAAUAPj/BAADAAUAAAAUAPn/BAAHAAEAAAAUAPr/BAAHAAEAAAAUAPv/BAAHAAEAAAAUAPz/BAAHAAEAAAAUAP3/BAAHAAEAAAAUAP7/BAAHAAEAAAAUAP//BAAHAAMAAAAVAPj/BAAHAAEAAGAWAPj/BAAHAAEAAGAXAPj/BAAHAAEAAGAYAPj/BAAHAAEAAGAZAPj/BAAHAAEAAGAaAPj/BAAHAAEAAGAbAPj/BAAHAAEAAGAcAPj/BAAHAAEAAGAdAPj/BAAHAAEAAGAeAPj/BAAHAAEAAGAfAPj/BAAHAAEAAGAgAPj/BAAHAAEAAGAhAPj/BAAHAAEAAGDi//f/BAAHAAEAAGDj//f/BAAHAAEAAGDk//f/BAAHAAEAAGDl//f/BAAHAAEAAGDm//f/BAAHAAEAAGD4/wEABAAFAAUAADA=")
+tile_map_data = PackedByteArray("AADu//f/BAADAAUAAADu//j/BAAHAAEAAADu//n/BAAHAAEAAADu//r/BAAHAAEAAADu//v/BAAHAAEAAADu//z/BAAHAAEAAADu//3/BAAHAAEAAADu//7/BAAHAAEAAADu////BAAHAAEAAADu/wAABAAHAAEAAADu/wEABAAHAAEAAADu/wIABAAHAAEAAADu/wMABAAHAAEAAADu/wQABAAHAAEAAADu/wUABAAHAAEAAADu/wYABAAHAAEAAADu/wcABAAHAAEAAADu/wgABAAHAAEAAADu/wkABAAHAAEAAADu/woABAAHAAEAAADu/wsABAAHAAMAAAD3/wsABAANAAQAAAD3/wwABAAOAAQAAADt//f/BAAHAAEAAGDr//f/BAAHAAEAAGDs//f/BAAHAAEAAGDq//f/BAAHAAEAAGDp//f/BAAHAAEAAGDo//f/BAAHAAEAAGDn//f/BAAHAAEAAGAiAPj/BAADAAUAAAAiAPn/BAAHAAEAAAAiAPr/BAAHAAEAAAAiAPv/BAAHAAEAAAAiAPz/BAAHAAEAAAAiAP3/BAAHAAEAAAAiAP7/BAAHAAEAAAAiAP//BAAHAAEAAAAiAAAABAAHAAEAAAAiAAEABAAHAAEAAAAiAAIABAAHAAEAAAAiAAMABAAHAAEAAAAiAAQABAAHAAEAAAAiAAUABAAHAAEAAAAiAAYABAAHAAEAAAAiAAcABAAHAAEAAAAiAAgABAAHAAEAAAAiAAkABAAHAAEAAAAiAAoABAAHAAEAAAAiAAsABAAHAAMAAAAUAPj/BAADAAUAAAAUAPn/BAAHAAEAAAAUAPr/BAAHAAEAAAAUAPv/BAAHAAEAAAAUAPz/BAAHAAEAAAAUAP3/BAAHAAEAAAAUAP7/BAAHAAEAAAAUAP//BAAHAAMAAAAVAPj/BAAHAAEAAGAWAPj/BAAHAAEAAGAXAPj/BAAHAAEAAGAYAPj/BAAHAAEAAGAZAPj/BAAHAAEAAGAaAPj/BAAHAAEAAGAbAPj/BAAHAAEAAGAcAPj/BAAHAAEAAGAdAPj/BAAHAAEAAGAeAPj/BAAHAAEAAGAfAPj/BAAHAAEAAGAgAPj/BAAHAAEAAGAhAPj/BAAHAAEAAGDi//f/BAAHAAEAAGDj//f/BAAHAAEAAGDk//f/BAAHAAEAAGDl//f/BAAHAAEAAGDm//f/BAAHAAEAAGD5/wEABAAFAAUAADD5/wIABAAIAAAAAAD5/wMABAAIAAEAAAD5/wQABAAIAAEAAAD5/wUABAAIAAEAAAD5/wYABAAIAAEAAAD5/wcABAAIAAEAAAD5/wgABAAIAAEAAAD5/wkABAAIAAQAAAA=")
 tile_set = SubResource("TileSet_deais")
 
 [node name="DecorationsFarBack" type="TileMapLayer" parent="Map"]
@@ -682,22 +683,32 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="CarryableBlocks" type="Node2D" parent="."]
 
-[node name="Block1" parent="CarryableBlocks" instance=ExtResource("10_v47br")]
-position = Vector2(-499, 254)
+[node name="Block1" parent="CarryableBlocks" groups=["Block"] instance=ExtResource("10_v47br")]
+position = Vector2(-560, 255)
 
-[node name="Block2" parent="CarryableBlocks" instance=ExtResource("10_v47br")]
+[node name="Block2" parent="CarryableBlocks" groups=["Block"] instance=ExtResource("10_v47br")]
 position = Vector2(173, 255)
 
-[node name="Block3" parent="CarryableBlocks" instance=ExtResource("10_v47br")]
+[node name="Block3" parent="CarryableBlocks" groups=["Block"] instance=ExtResource("10_v47br")]
 position = Vector2(-66, 48)
 
-[node name="Block4" parent="CarryableBlocks" instance=ExtResource("10_v47br")]
+[node name="Block4" parent="CarryableBlocks" groups=["Block"] instance=ExtResource("10_v47br")]
 position = Vector2(-19, -144)
 
 [node name="Buttons" type="Node2D" parent="."]
 
 [node name="Button1" parent="Buttons" instance=ExtResource("4_c70w6")]
-position = Vector2(-404, 253)
+position = Vector2(-514, 254)
 
 [node name="Button2" parent="Buttons" instance=ExtResource("4_c70w6")]
 position = Vector2(-240, 45)
+
+[node name="MovingPlatform" parent="." node_paths=PackedStringArray("controlling_button") instance=ExtResource("11_11xol")]
+position = Vector2(-281, 215)
+end_position = Vector2(-27, 215)
+controlling_button = NodePath("../Buttons/Button2")
+
+[node name="MovingPlatform2" parent="." node_paths=PackedStringArray("controlling_button") instance=ExtResource("11_11xol")]
+position = Vector2(-458, 248)
+end_position = Vector2(-458, -24)
+controlling_button = NodePath("../Buttons/Button1")
