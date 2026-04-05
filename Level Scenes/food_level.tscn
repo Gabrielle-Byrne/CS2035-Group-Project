@@ -27,6 +27,6 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="Hungry" parent="." node_paths=PackedStringArray("foodToFollow") instance=ExtResource("5_hfkyv")]
 position = Vector2(361, 119)
-foodToFollow = NodePath("../carryableBlock")
+foodToFollow = NodePath("../Player_A")
 
 [node name="Block" parent="." instance=ExtResource("6_wtoaq")]

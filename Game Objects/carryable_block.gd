@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = 0
 			
-		print(velocity)
 		move_and_slide()
 	elif is_carried:
 		velocity = Vector2.ZERO

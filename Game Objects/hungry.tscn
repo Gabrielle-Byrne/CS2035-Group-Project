@@ -54,11 +54,29 @@ scale = Vector2(1.92, 1.95455)
 sprite_frames = SubResource("SpriteFrames_h7imd")
 animation = &"walking"
 
-[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
+[node name="ray1" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(-100, -30)
+
+[node name="ray2" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(-100, -20)
+
+[node name="ray3" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(-100, -10)
+
+[node name="ray4" type="RayCast2D" parent="AnimatedSprite2D"]
 target_position = Vector2(-100, 0)
 
+[node name="ray5" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(-100, 10)
+
+[node name="ray6" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(-100, 20)
+
+[node name="ray7" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(-100, 30)
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
