@@ -102,38 +102,38 @@ func change_direction() -> void:
 		
 		return #Break out of function to prevent chasing or wander
 	
-	#if wall_detect.is_colliding():
-	#	var collider = wall_detect.get_collider()
-	#	print(collider.name)
-	#	if collider != foodToFollow:
-	#		var collision_point = tile.local_to_map(wall_detect.get_collision_point())
-	#		var tileAtlas = tile.get_cell_atlas_coords(collision_point)
+	if wall_detect.is_colliding():
+		var collider = wall_detect.get_collider()
+		print(collider.name)
+		if collider != foodToFollow:
+			var collision_point = tile.local_to_map(wall_detect.get_collision_point())
+			var tileAtlas = tile.get_cell_atlas_coords(collision_point)
 			
-	#		var notAWall: Array = [
-	#			Vector2i(0, 5),
-	#			Vector2i(1, 5),
-	#			Vector2i(2, 5),
-	#			Vector2i(3, 5),
-	#			Vector2i(4, 5),
-	#			Vector2i(5, 5),
-	#			Vector2i(6, 5),
-	#			Vector2i(7, 5),
-	#			Vector2i(12, 5),
-	#		]
+			var notAWall: Array = [
+				Vector2i(0, 5),
+				Vector2i(1, 5),
+				Vector2i(2, 5),
+				Vector2i(3, 5),
+				Vector2i(4, 5),
+				Vector2i(5, 5),
+				Vector2i(6, 5),
+				Vector2i(7, 5),
+				Vector2i(12, 5),
+			]
 			
-	#		if tileAtlas in notAWall:
-	#			return
+			if tileAtlas in notAWall:
+				return
 			#Turn around if there is a wall
-	#		if direction.x == 1:
-	#			direction = Vector2(-1, 0)
-	#			sprite.scale.x = currentScaleX
-	#		elif direction.x == -1:
-	#			direction = Vector2(1, 0)
-	#			sprite.scale.x = -currentScaleX
+			if direction.x == 1:
+				direction = Vector2(-1, 0)
+				sprite.scale.x = currentScaleX
+			elif direction.x == -1:
+				direction = Vector2(1, 0)
+				sprite.scale.x = -currentScaleX
 			
-	#		if current_state == States.CHASE:
-	#			current_state = States.WANDER
-	#		return
+			if current_state == States.CHASE:
+				current_state = States.WANDER
+			return
 	
 	if current_state == States.WANDER:
 		if direction.x == 1:
