@@ -9,7 +9,7 @@ func _process(delta):
 	
 func handleCollisions():
 	# Iterate through all collisions that occurred this frame
-	print("ss")
+	print("s")
 	for  index in range(get_slide_collision_count()):
 		# We get one of the collisions with the player
 		var collision = get_slide_collision(index)

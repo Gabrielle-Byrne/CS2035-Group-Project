@@ -10,6 +10,9 @@ var target_object: Node2D
 
 var facingDirection
 
+@onready var JumpSound : AudioStreamPlayer2D = $JumpSound
+@onready var PickupSound = $PickupSound
+
 var held_object: Node2D
 
 @onready var carry_position: Marker2D = $CarryPosition
@@ -24,6 +27,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("a_jump") and is_on_floor():
+		JumpSound.play()
 		velocity.y = JUMP_VELOCITY
 	
 	if position.y < -1000:
@@ -54,7 +58,9 @@ func _physics_process(delta: float) -> void:
 		if block.is_in_group("Block") and abs(block.get_linear_velocity().x) < MAX_VELOCITY:
 			block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
 	
-	
+	if PickupSound != null:
+		PickupSound.play()
+		
 	if held_object:
 		drop_object()
 	else:

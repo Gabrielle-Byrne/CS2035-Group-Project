@@ -5,6 +5,7 @@ var can_change = false
 #@onready var cameraB = $Player_B/Camera_B
 #@onready var cameraA = $Player_A/Camera_A
 @onready var camera = $Camera2D
+@onready var LevelMusic = $LevelMusic
 
 
 enum {Player_A, Player_B}
@@ -12,6 +13,7 @@ var state
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	LevelMusic.play()
 	state = Player_A
 
 

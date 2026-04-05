@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk50dnc05e71v"]
+[gd_scene load_steps=12 format=3 uid="uid://dk50dnc05e71v"]
 
 [ext_resource type="Script" uid="uid://b8piwe66sx7cb" path="res://Player/player_a.gd" id="1_kkwot"]
 [ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="2_ahobw"]
+[ext_resource type="AudioStream" uid="uid://d3dvu3uwyaaml" path="res://Sound_Music/JumpA.wav" id="3_vqe88"]
+[ext_resource type="AudioStream" uid="uid://c7enyhgmte0qb" path="res://Sound_Music/Pickup1.wav" id="4_jff03"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(20, 24)
@@ -67,6 +69,12 @@ shape = SubResource("RectangleShape2D_kkwot")
 
 [node name="CarryPosition" type="Marker2D" parent="."]
 position = Vector2(0, -14)
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vqe88")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jff03")
 
 [connection signal="body_entered" from="PickupRange" to="." method="_on_pickup_range_body_entered"]
 [connection signal="body_exited" from="PickupRange" to="." method="_on_pickup_range_body_exited"]
