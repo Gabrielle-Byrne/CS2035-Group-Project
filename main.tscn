@@ -2,11 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://player-A.tscn" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://player-B.tscn" id="4_lquwl"]
-
-[ext_resource type="Script" uid="uid://ctw3qion1jgoh" path="res://Player/player_b.gd" id="4_1bvp3"]
-
+[ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="4_lquwl"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h2yge")
