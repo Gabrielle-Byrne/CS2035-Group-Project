@@ -30,6 +30,8 @@ var current_state = States.IDLE
 func _ready():
 	left_wander_bounds = self.position + Vector2(-100, 0)
 	right_wander_bounds = self.position + Vector2(0, 100)
+	currentScaleX = currentScaleX * self.scale.x
+	currentScaleY = currentScaleY * self.scale.x
 
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
