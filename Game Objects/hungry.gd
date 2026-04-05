@@ -89,11 +89,11 @@ func change_direction() -> void:
 
 				
 	elif current_state == States.CHASE:
-		#Switch to following food object. Set direction to where food is
-		direction = (foodToFollow.position - self.position).normalized()
-		
+		#Switch to following food object. Set direction to where food is.
+		#using global position in case food is carried
+		direction = (foodToFollow.global_position - self.position).normalized()
 		#Get current direction
-		direction = sign(direction)  
+		direction = sign(direction) 
 		#If food is to the right
 		if direction.x == 1:
 			#flip to right
