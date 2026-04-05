@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bn0u21bb062kv"]
+[gd_scene load_steps=20 format=4 uid="uid://bn0u21bb062kv"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_mkvud"]
 [ext_resource type="Script" uid="uid://cqlxinfo74wid" path="res://Level Scenes/final_level.gd" id="1_ml21q"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b66o467wuse7p" path="res://Assets/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap - Industrial.png" id="5_11xol"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="10_v47br"]
 [ext_resource type="PackedScene" uid="uid://cfionpmso6kyh" path="res://Game Objects/moving_platform.tscn" id="11_11xol"]
+[ext_resource type="Script" uid="uid://ch6sivlf7c6gn" path="res://Game Objects/rope.gd" id="12_cbvfa"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_24rg2"]
 tile_data = PackedInt32Array(0, 65539, 0, 1, 131075, 0, 2, 196611, 0)
@@ -656,7 +657,7 @@ tile_set = ExtResource("1_mkvud")
 [node name="DecorationsBack" type="TileMapLayer" parent="Map"]
 z_index = 1
 position = Vector2(-170, 55)
-tile_map_data = PackedByteArray("AADu//f/BAADAAUAAADu//j/BAAHAAEAAADu//n/BAAHAAEAAADu//r/BAAHAAEAAADu//v/BAAHAAEAAADu//z/BAAHAAEAAADu//3/BAAHAAEAAADu//7/BAAHAAEAAADu////BAAHAAEAAADu/wAABAAHAAEAAADu/wEABAAHAAEAAADu/wIABAAHAAEAAADu/wMABAAHAAEAAADu/wQABAAHAAEAAADu/wUABAAHAAEAAADu/wYABAAHAAEAAADu/wcABAAHAAEAAADu/wgABAAHAAEAAADu/wkABAAHAAEAAADu/woABAAHAAEAAADu/wsABAAHAAMAAAD3/wsABAANAAQAAAD3/wwABAAOAAQAAADt//f/BAAHAAEAAGDr//f/BAAHAAEAAGDs//f/BAAHAAEAAGDq//f/BAAHAAEAAGDp//f/BAAHAAEAAGDo//f/BAAHAAEAAGDn//f/BAAHAAEAAGAiAPj/BAADAAUAAAAiAPn/BAAHAAEAAAAiAPr/BAAHAAEAAAAiAPv/BAAHAAEAAAAiAPz/BAAHAAEAAAAiAP3/BAAHAAEAAAAiAP7/BAAHAAEAAAAiAP//BAAHAAEAAAAiAAAABAAHAAEAAAAiAAEABAAHAAEAAAAiAAIABAAHAAEAAAAiAAMABAAHAAEAAAAiAAQABAAHAAEAAAAiAAUABAAHAAEAAAAiAAYABAAHAAEAAAAiAAcABAAHAAEAAAAiAAgABAAHAAEAAAAiAAkABAAHAAEAAAAiAAoABAAHAAEAAAAiAAsABAAHAAMAAAAUAPj/BAADAAUAAAAUAPn/BAAHAAEAAAAUAPr/BAAHAAEAAAAUAPv/BAAHAAEAAAAUAPz/BAAHAAEAAAAUAP3/BAAHAAEAAAAUAP7/BAAHAAEAAAAUAP//BAAHAAMAAAAVAPj/BAAHAAEAAGAWAPj/BAAHAAEAAGAXAPj/BAAHAAEAAGAYAPj/BAAHAAEAAGAZAPj/BAAHAAEAAGAaAPj/BAAHAAEAAGAbAPj/BAAHAAEAAGAcAPj/BAAHAAEAAGAdAPj/BAAHAAEAAGAeAPj/BAAHAAEAAGAfAPj/BAAHAAEAAGAgAPj/BAAHAAEAAGAhAPj/BAAHAAEAAGDi//f/BAAHAAEAAGDj//f/BAAHAAEAAGDk//f/BAAHAAEAAGDl//f/BAAHAAEAAGDm//f/BAAHAAEAAGD5/wEABAAFAAUAADD5/wIABAAIAAAAAAD5/wMABAAIAAEAAAD5/wQABAAIAAEAAAD5/wUABAAIAAEAAAD5/wYABAAIAAEAAAD5/wcABAAIAAEAAAD5/wgABAAIAAEAAAD5/wkABAAIAAQAAAA=")
+tile_map_data = PackedByteArray("AADu//f/BAADAAUAAAD3/wsABAANAAQAAAD3/wwABAAOAAQAAADt//f/BAAHAAEAAGDr//f/BAAHAAEAAGDs//f/BAAHAAEAAGDq//f/BAAHAAEAAGDp//f/BAAHAAEAAGDo//f/BAAHAAEAAGDn//f/BAAHAAEAAGAiAPj/BAADAAUAAAAiAPn/BAAHAAEAAAAiAPr/BAAHAAEAAAAiAPv/BAAHAAEAAAAiAPz/BAAHAAEAAAAiAP3/BAAHAAEAAAAiAP7/BAAHAAEAAAAiAP//BAAHAAEAAAAiAAAABAAHAAEAAAAiAAEABAAHAAEAAAAiAAIABAAHAAEAAAAiAAMABAAHAAEAAAAiAAQABAAHAAEAAAAiAAUABAAHAAEAAAAiAAYABAAHAAEAAAAiAAcABAAHAAEAAAAiAAgABAAHAAEAAAAiAAkABAAHAAEAAAAiAAoABAAHAAEAAAAiAAsABAAHAAMAAAAUAPj/BAADAAUAAAAUAPn/BAAHAAEAAAAUAPr/BAAHAAEAAAAUAPv/BAAHAAEAAAAUAPz/BAAHAAEAAAAUAP3/BAAHAAEAAAAUAP7/BAAHAAEAAAAUAP//BAAHAAMAAAAVAPj/BAAHAAEAAGAWAPj/BAAHAAEAAGAXAPj/BAAHAAEAAGAYAPj/BAAHAAEAAGAZAPj/BAAHAAEAAGAaAPj/BAAHAAEAAGAbAPj/BAAHAAEAAGAcAPj/BAAHAAEAAGAdAPj/BAAHAAEAAGAeAPj/BAAHAAEAAGAfAPj/BAAHAAEAAGAgAPj/BAAHAAEAAGAhAPj/BAAHAAEAAGDi//f/BAAHAAEAAGDj//f/BAAHAAEAAGDk//f/BAAHAAEAAGDl//f/BAAHAAEAAGDm//f/BAAHAAEAAGD5/wEABAAFAAUAADD5/wIABAAIAAAAAAD5/wMABAAIAAEAAAD5/wQABAAIAAEAAAD5/wUABAAIAAEAAAD5/wYABAAIAAEAAAD5/wcABAAIAAEAAAD5/wgABAAIAAEAAAD5/wkABAAIAAQAAAA=")
 tile_set = SubResource("TileSet_deais")
 
 [node name="DecorationsFarBack" type="TileMapLayer" parent="Map"]
@@ -707,6 +708,21 @@ position = Vector2(-240, 45)
 position = Vector2(-458, 248)
 end_position = Vector2(-458, -24)
 controlling_button = NodePath("../Buttons/Button1")
+
+[node name="Rope" type="TileMapLayer" parent="MovingPlatform1" node_paths=PackedStringArray("platform")]
+position = Vector2(463, -257)
+tile_map_data = PackedByteArray("AADj/w8ABAAHAAEAAAA=")
+tile_set = ExtResource("1_mkvud")
+script = ExtResource("12_cbvfa")
+platform = NodePath("..")
+ceiling_y = -71.0
+rope_source_id = 4
+rope_tile = Vector2i(7, 1)
+y_offset = -30.0
+
+[node name="RopeAttach" type="TileMapLayer" parent="MovingPlatform1"]
+tile_map_data = PackedByteArray("AAAAAP//BAAHAAMAAAA=")
+tile_set = ExtResource("1_mkvud")
 
 [node name="MovingPlatform2" parent="." node_paths=PackedStringArray("controlling_button") instance=ExtResource("11_11xol")]
 position = Vector2(-281, 215)
