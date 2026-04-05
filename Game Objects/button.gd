@@ -19,8 +19,6 @@ func _on_button_top_body_entered(body: Node2D) -> void:
 		$StaticBody2D/CollisionShape2D.shape.size.y = 10
 		$StaticBody2D/CollisionShape2D.position.y = 4
 		button_pressed.emit()
-		
-
 
 func _on_button_top_body_exited(body: Node2D) -> void:
 	if(body.is_in_group("Player")):

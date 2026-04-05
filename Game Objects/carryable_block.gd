@@ -3,10 +3,10 @@ extends CharacterBody2D
 class_name Carryable
 
 var is_carried: bool = false
+var current_platform: Node2D = null
 
 var is_pushed: bool = false
 var direction = 0
-
 var SLIDE_SPEED: float = 60
 
 func _physics_process(delta: float) -> void:
@@ -17,10 +17,16 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction * SLIDE_SPEED
 		else:
 			velocity.x = 0
-			
+		
 		move_and_slide()
 	elif is_carried:
 		velocity = Vector2.ZERO
+
+func set_platform(platform: Node2D):
+	current_platform = platform
+
+func clear_platform():
+	current_platform = null
 
 func _on_left_pushable_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player_A" or body.name == "Player_B":
