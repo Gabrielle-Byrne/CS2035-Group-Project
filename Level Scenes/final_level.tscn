@@ -703,12 +703,12 @@ position = Vector2(-514, 254)
 [node name="Button2" parent="Buttons" instance=ExtResource("4_c70w6")]
 position = Vector2(-240, 45)
 
-[node name="MovingPlatform" parent="." node_paths=PackedStringArray("controlling_button") instance=ExtResource("11_11xol")]
-position = Vector2(-281, 215)
-end_position = Vector2(-27, 215)
-controlling_button = NodePath("../Buttons/Button2")
-
-[node name="MovingPlatform2" parent="." node_paths=PackedStringArray("controlling_button") instance=ExtResource("11_11xol")]
+[node name="MovingPlatform1" parent="." node_paths=PackedStringArray("controlling_button") instance=ExtResource("11_11xol")]
 position = Vector2(-458, 248)
 end_position = Vector2(-458, -24)
 controlling_button = NodePath("../Buttons/Button1")
+
+[node name="MovingPlatform2" parent="." node_paths=PackedStringArray("controlling_button") instance=ExtResource("11_11xol")]
+position = Vector2(-281, 215)
+end_position = Vector2(-27, 215)
+controlling_button = NodePath("../Buttons/Button2")
