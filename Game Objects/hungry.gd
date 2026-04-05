@@ -16,13 +16,16 @@ var direction: Vector2
 var left_wander_bounds: Vector2
 var right_wander_bounds: Vector2
 
+var currentScaleX: float = 1.92
+var currentScaleY: float = 1.955
+
 enum States{
 	WANDER,
 	IDLE,
 	CHASE
 }
 
-var current_state = States.WANDER
+var current_state = States.IDLE
 
 func _ready():
 	left_wander_bounds = self.position + Vector2(-100, 0)
@@ -36,7 +39,8 @@ func _physics_process(delta: float) -> void:
 	
 	if current_state == States.WANDER or current_state == States.CHASE:
 		sprite.play("walking")
-
+	elif current_state == States.IDLE:
+		sprite.play("sleeping")
 
 func look_for_food():
 	for ray in rays:
@@ -67,21 +71,36 @@ func handle_movement(delta: float) -> void:
 
 func change_direction() -> void:
 	if current_state == States.WANDER:
-		if sprite.flip_h:
-			if self.position.x <= right_wander_bounds.x:
-				direction = Vector2(1, 0)
-			else:
-				sprite.flip_h = false
-				for ray in rays:
-					ray.target_position.x = -100
-				
-		else:
-			if self.position.x >= left_wander_bounds.x:
+		if direction.x == 1:
+			#move to the right
+			if self.position.x >= right_wander_bounds.x:
 				direction = Vector2(-1, 0)
-			else:
-				sprite.flip_h = true
-				for ray in rays:
-					ray.target_position.x = 100
+				sprite.scale.x = currentScaleX
+		elif direction.x == -1:
+			#move to the left
+			if self.position.x <= left_wander_bounds.x:
+				#flip right if exceed left bound
+				direction = Vector2(1, 0)
+				sprite.scale.x = -currentScaleX
+		else:
+			direction = Vector2(1, 0)
+			sprite.scale.x = -currentScaleX
+		
+		#if sprite.flip_h:
+		#	if self.position.x <= right_wander_bounds.x:
+		#		direction = Vector2(1, 0)
+		#	else:
+		#		sprite.flip_h = false
+		#		for ray in rays:
+		#			ray.target_position.x = -100
+				
+		#else:
+		#	if self.position.x >= left_wander_bounds.x:
+		#		direction = Vector2(-1, 0)
+		#	else:
+		#		sprite.flip_h = true
+		#		for ray in rays:
+		#			ray.target_position.x = 100
 								
 	elif current_state == States.CHASE:
 		#Switch to following food object. Set direction to where food is.
@@ -92,14 +111,16 @@ func change_direction() -> void:
 		#If food is to the right
 		if direction.x == 1:
 			#flip to right
-			sprite.flip_h = true
-			for ray in rays:
-				ray.target_position.x = 100
+			#sprite.flip_h = true
+			#for ray in rays:
+			#	ray.target_position.x = 100
+			sprite.scale.x = -currentScaleX
 		else:
 			#flip to left
-			sprite.flip_h = false
-			for ray in rays:
-				ray.target_position.x = -100
+			#sprite.flip_h = false
+			#for ray in rays:
+			#	ray.target_position.x = -100
+			sprite.scale.x = currentScaleX
 
 func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
