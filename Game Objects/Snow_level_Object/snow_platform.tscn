@@ -1,26 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwkhhl2yw3bfy"]
+[gd_scene load_steps=5 format=4 uid="uid://bwkhhl2yw3bfy"]
 
 [ext_resource type="Script" uid="uid://kf54krs8wy6e" path="res://Game Objects/Snow_level_Object/snow_platform_controller.gd" id="1_itw8e"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_nee1v"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_itw8e"]
-polygon = PackedVector2Array(-1, -33, 19, -33, 19, 49, -1, 49)
+polygon = PackedVector2Array(-1, -66, 19, -66, 19, 82, -1, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbgp1"]
-size = Vector2(18, 82)
+size = Vector2(18, 147)
 
-[node name="SnowPlatform" type="Node2D" groups=["Wind_Blocker"]]
+[node name="SnowPlatform" type="StaticBody2D" groups=["Wind_Blocker"]]
 script = ExtResource("1_itw8e")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 4, 0, 5, 0, 0, 0, 0, 80, 0, 0, 1, 0, 4, 0, 5, 0, 1, 0, 0, 80, 0, 0, 2, 0, 4, 0, 6, 0, 0, 0, 0, 80, 0, 0, 255, 255, 4, 0, 5, 0, 0, 0, 0, 80, 0, 0, 254, 255, 4, 0, 6, 0, 1, 0, 0, 96)
+tile_map_data = PackedByteArray("AAAAAAAABAAFAAAAAFAAAAEABAAFAAEAAFAAAAIABAAFAAAAAFAAAP//BAAFAAAAAFAAAP7/BAAFAAAAAFAAAP3/BAAFAAEAAFAAAAMABAAFAAEAAFAAAPz/BAAEAAEAAFAAAAQABAAGAAEAAFA=")
 tile_set = ExtResource("1_nee1v")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_itw8e")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(8, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8.5)
 shape = SubResource("RectangleShape2D_lbgp1")

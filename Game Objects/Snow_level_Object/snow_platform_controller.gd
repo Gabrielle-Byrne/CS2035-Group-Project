@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	position.y = position.y + direction * SPEED * delta
+	position.y = clamp(position.y + direction * SPEED * delta, -220, 220)
 	
 
 

@@ -19,4 +19,4 @@ func _physics_process(delta: float) -> void:
 		if(collider and collider.is_in_group("Player")):
 			collider.wind_speed += 100
 
-	position.y = move_toward(position.y, player.position.y, SPEED)
+	position.y = clamp(move_toward(position.y, player.position.y, SPEED), -250, 270)
