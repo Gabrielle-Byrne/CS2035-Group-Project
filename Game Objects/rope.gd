@@ -5,7 +5,7 @@ extends TileMapLayer
 @export var rope_source_id: int = 0
 @export var rope_tile: Vector2i = Vector2i(0, 0)
 @export var x_offset: float = 0
-@export var y_offset: float = 0  # Add this - negative moves rope UP
+@export var y_offset: float = 0  #negative moves rope UP
 
 func _ready():
 	clear()
