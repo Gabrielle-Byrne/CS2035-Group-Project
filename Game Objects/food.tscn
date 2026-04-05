@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://digtk2xrf7k1e"]
+
+[ext_resource type="Script" uid="uid://cewufjrlk22j8" path="res://Game Objects/carryable_block.gd" id="1_w3rha"]
+[ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="2_w3rha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqbn"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gplwl"]
+size = Vector2(10, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_157ao"]
+size = Vector2(10, 15)
+
+[node name="food" type="CharacterBody2D" groups=["Food"]]
+script = ExtResource("1_w3rha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_abqbn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w3rha")
+region_enabled = true
+region_rect = Rect2(227.879, 94.8735, 18.0715, 18.1731)
+
+[node name="leftPushableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftPushableArea"]
+position = Vector2(-5, 0)
+shape = SubResource("RectangleShape2D_gplwl")
+
+[node name="rightPushableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightPushableArea"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_157ao")
+
+[connection signal="body_entered" from="leftPushableArea" to="." method="_on_left_pushable_area_body_entered"]
+[connection signal="body_exited" from="leftPushableArea" to="." method="_on_left_pushable_area_body_exited"]
+[connection signal="body_entered" from="rightPushableArea" to="." method="_on_right_pushable_area_body_entered"]
+[connection signal="body_exited" from="rightPushableArea" to="." method="_on_right_pushable_area_body_exited"]

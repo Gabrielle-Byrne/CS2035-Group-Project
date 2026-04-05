@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b2etpdsp4hftq"]
+[gd_scene load_steps=8 format=4 uid="uid://b2etpdsp4hftq"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_2rxg5"]
 [ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_hfkyv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="4_2rxg5"]
 [ext_resource type="PackedScene" uid="uid://d1cxtanca3cgl" path="res://Game Objects/hungry.tscn" id="5_hfkyv"]
 [ext_resource type="PackedScene" uid="uid://dhgxh8alcsgk3" path="res://Game Objects/block.tscn" id="6_wtoaq"]
+[ext_resource type="PackedScene" uid="uid://digtk2xrf7k1e" path="res://Game Objects/food.tscn" id="7_4k2bo"]
 
 [node name="Food_level" type="Node2D"]
 
@@ -30,3 +31,7 @@ position = Vector2(361, 119)
 foodToFollow = NodePath("../carryableBlock")
 
 [node name="Block" parent="." instance=ExtResource("6_wtoaq")]
+position = Vector2(-141, 148)
+
+[node name="food" parent="." instance=ExtResource("7_4k2bo")]
+position = Vector2(-69, 39)

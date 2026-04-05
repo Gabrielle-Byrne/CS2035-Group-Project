@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var foodToFollow: CharacterBody2D
 @export var SPEED: int = 50
-@export var CHASE_SPEED: int = 80
-@export var ACCELERATION: int = 200
+@export var CHASE_SPEED: int = 100
+@export var ACCELERATION: int = 100
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -16,14 +16,9 @@ var direction: Vector2
 var left_wander_bounds: Vector2
 var right_wander_bounds: Vector2
 
-var angle_cone_of_vision := deg_to_rad(45.0)
-var max_view_distance:= 200
-var angle_between_rays := deg_to_rad(5.0)
-
-
 enum States{
 	WANDER,
-	SLEEP,
+	IDLE,
 	CHASE
 }
 
@@ -47,7 +42,8 @@ func look_for_food():
 	for ray in rays:
 		if ray.is_colliding():
 			var collider = ray.get_collider()
-			if collider == foodToFollow:
+			if collider.is_in_group("Food"):
+				foodToFollow = collider
 				chase_food()
 			elif current_state == States.CHASE:
 				stop_chase()
@@ -86,8 +82,7 @@ func change_direction() -> void:
 				sprite.flip_h = true
 				for ray in rays:
 					ray.target_position.x = 100
-
-				
+								
 	elif current_state == States.CHASE:
 		#Switch to following food object. Set direction to where food is.
 		#using global position in case food is carried
