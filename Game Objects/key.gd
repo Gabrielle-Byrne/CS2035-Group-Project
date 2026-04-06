@@ -4,24 +4,23 @@ var speed = 200
 var is_following = false
 var target = null
 
+
+func _ready():
+	$CollisionShape2D.disabled = false
+
 func _process(delta):
 	handleCollisions()
 	
 func handleCollisions():
-	# Iterate through all collisions that occurred this frame
-	print("s")
-	for  index in range(get_slide_collision_count()):
-		# We get one of the collisions with the player
+	for index in range(get_slide_collision_count()):
 		var collision = get_slide_collision(index)
-		print(collision)
-		#for reasons we won't go into here, collision detection is
-		#complicated and we may get a null collision, skip it!
+		print("Collided with: ", collision.get_collider().name)
 		if collision.get_collider() == null:
 			continue
-		# If the collider is with player
 		if collision.get_collider().is_in_group("Player"):
 			target = collision
 			is_following = true
+			$CollisionShape2D.set_deferred("disabled", true)
 			break
 
 
