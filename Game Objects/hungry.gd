@@ -31,9 +31,9 @@ enum States{
 var current_state = States.IDLE
 
 func _ready():
-	left_wander_bounds = self.position + Vector2(-150, 0)
+	left_wander_bounds = self.position + Vector2(-50, 0)
 	print(left_wander_bounds)
-	right_wander_bounds = self.position + Vector2(150, 0)
+	right_wander_bounds = self.position + Vector2(50, 0)
 	print(right_wander_bounds)
 	currentScaleX = currentScaleX * self.scale.x
 	currentScaleY = currentScaleY * self.scale.x
