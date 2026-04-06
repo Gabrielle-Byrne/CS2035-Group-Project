@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b0adr0djeb5td" path="res://Game Objects/key.tscn" id="6_won18"]
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_jh71k"]
 [ext_resource type="Script" uid="uid://bvloyuwm2222v" path="res://Level Scenes/rescue_dialogue.gd" id="8_v4dpb"]
-[ext_resource type="AudioStream" uid="uid://cn4c5ad15tw06" path="res://Sound_Music/House In a Forest Loop.ogg" id="9_54hx0"]
+[ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="9_o5815"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="10_6yng6"]
 
 [node name="Level_1" type="Node2D"]
@@ -76,7 +76,7 @@ autowrap_mode = 2
 script = ExtResource("8_v4dpb")
 
 [node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_54hx0")
+stream = ExtResource("9_o5815")
 
 [node name="Goal" parent="." instance=ExtResource("10_6yng6")]
-position = Vector2(392, 81)
+position = Vector2(391, 67)

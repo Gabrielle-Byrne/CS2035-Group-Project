@@ -84,7 +84,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fiiem"]
-size = Vector2(20, 25)
+size = Vector2(20, 22)
 
 [node name="Goal" type="CharacterBody2D"]
 script = ExtResource("1_xfc30")
@@ -94,7 +94,7 @@ sprite_frames = SubResource("SpriteFrames_oxa6e")
 animation = &"Yellow"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_fiiem")
 
 [node name="Dialogue" type="AudioStreamPlayer2D" parent="."]

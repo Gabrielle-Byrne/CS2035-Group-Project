@@ -22,8 +22,8 @@ func _process(_delta):
 	can_change = true
 	
 	if Input.is_action_just_pressed("reset"):
-		pass
-	
+		get_tree().change_scene_to_file("res://Level Scenes/level_1.tscn")
+
 	match state:
 		Player_A:
 			if Input.is_action_just_pressed("switch_character") and can_change == true:

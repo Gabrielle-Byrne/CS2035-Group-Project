@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bx8n7dfsjxer7"]
+[gd_scene load_steps=12 format=4 uid="uid://bx8n7dfsjxer7"]
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://Level Scenes/main.gd" id="1_nsi6k"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_c1vm0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bvloyuwm2222v" path="res://Level Scenes/rescue_dialogue.gd" id="8_hcikv"]
 [ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="9_gy5sw"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="10_gy5sw"]
+[ext_resource type="PackedScene" uid="uid://b2aqu2rkyuhm0" path="res://Game Objects/lock.tscn" id="11_eajg8"]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_nsi6k")
@@ -64,6 +65,18 @@ script = ExtResource("7_c1vm0")
 A = NodePath("../Player_A")
 B = NodePath("../Player_B")
 
+[node name="InstructionHelp" type="Label" parent="." node_paths=PackedStringArray("A", "B")]
+offset_left = 336.0
+offset_top = -32.0
+offset_right = 428.0
+offset_bottom = 43.0
+text = "You need to get the keys!"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("7_c1vm0")
+A = NodePath("../Player_A")
+B = NodePath("../Player_B")
+
 [node name="Rescue" type="Label" parent="."]
 visible = false
 offset_left = 282.0
@@ -82,3 +95,9 @@ parameters/looping = false
 
 [node name="Goal" parent="." instance=ExtResource("10_gy5sw")]
 position = Vector2(393, 90)
+
+[node name="Lock" parent="." instance=ExtResource("11_eajg8")]
+position = Vector2(362, 102)
+
+[node name="Lock2" parent="." instance=ExtResource("11_eajg8")]
+position = Vector2(340, 102)

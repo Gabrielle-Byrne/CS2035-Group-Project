@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2aqu2rkyuhm0"]
+[gd_scene load_steps=5 format=3 uid="uid://g4hb3g8084gl"]
 
-[ext_resource type="Script" uid="uid://bmawrsl3bsqxj" path="res://Game Objects/lock.gd" id="1_y3j6o"]
-[ext_resource type="Texture2D" uid="uid://x61ug65pahh5" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="2_y3j6o"]
+[ext_resource type="Script" uid="uid://dij7udhyecspr" path="res://Game Objects/block.gd" id="1_cixss"]
+[ext_resource type="Texture2D" uid="uid://lsiqbttocrfx" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap.png" id="2_xvr1w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_im0tn"]
 _surfaces = [{
@@ -19,12 +19,12 @@ _surfaces = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfwl5"]
 
-[node name="Lock" type="Area2D" groups=["Block"]]
-script = ExtResource("1_y3j6o")
+[node name="Block" type="RigidBody2D" groups=["Block"]]
+script = ExtResource("1_cixss")
 
 [node name="Sprite2D" type="MeshInstance2D" parent="."]
 mesh = SubResource("ArrayMesh_im0tn")
-texture = ExtResource("2_y3j6o")
+texture = ExtResource("2_xvr1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xfwl5")
