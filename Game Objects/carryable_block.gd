@@ -7,7 +7,7 @@ var current_platform: Node2D = null
 
 var is_pushed: bool = false
 var direction = 0
-var SLIDE_SPEED: float = 60
+var SLIDE_SPEED: float = 120
 
 func _physics_process(delta: float) -> void:
 	if !is_carried:
