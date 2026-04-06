@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c0ivw3xlujf4k"]
+[gd_scene load_steps=18 format=4 uid="uid://c0ivw3xlujf4k"]
 
 [ext_resource type="Script" uid="uid://b876sisehlmhp" path="res://Level Scenes/food_level.gd" id="1_4k2bo"]
 [ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="2_8ak3n"]
@@ -13,6 +13,9 @@
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_43dj5"]
 tile_data = PackedInt32Array(0, 393217, 2, 65536, 393217, 2, 131072, 393217, 2, 196608, 393217, 2, 262144, 393217, 2, 1, 393217, 2, 65537, 393217, 2, 131073, 393217, 2, 196609, 393217, 2, 262145, 393217, 2, 2, 393217, 2, 65538, 393217, 2, 131074, 393217, 2, 196610, 393217, 2, 262146, 393217, 2, 3, 393217, 2, 65539, 393217, 2, 131075, 393217, 2, 196611, 393217, 2, 262147, 393217, 2, 4, 393217, 2, 65540, 393217, 2, 131076, 393217, 2, 196612, 393217, 2, 262148, 393217, 2, 5, 458753, 2, 65541, 458753, 2, 131077, 458753, 2, 196613, 458753, 2, 262149, 458753, 2)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_b4lik"]
+tile_data = PackedInt32Array(0, 262145, 4, 65536, 327681, 2, 1, 393217, 1, 65537, 393217, 2, 2, 393217, 1, 65538, 393217, 2, 3, 393217, 1, 65539, 393217, 2, 4, 393217, 1, 65540, 393217, 2)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43dj5"]
 texture = ExtResource("2_8ak3n")
@@ -305,6 +308,7 @@ texture_region_size = Vector2i(18, 18)
 5:2/0 = 0
 5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -8, 9, -8, 9, 8, -9, 8)
 6:2/0 = 0
+6:2/0/modulate = Color(1, 1, 1, 0.784314)
 7:2/0 = 0
 7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -8, 9, -8, 9, 8, -9, 8)
 8:2/0 = 0
@@ -698,6 +702,7 @@ sources/1 = SubResource("TileSetAtlasSource_bxdng")
 sources/2 = SubResource("TileSetAtlasSource_4ak3y")
 sources/3 = SubResource("TileSetAtlasSource_qjdkq")
 pattern_0 = SubResource("TileMapPattern_43dj5")
+pattern_1 = SubResource("TileMapPattern_b4lik")
 
 [node name="Food_level" type="Node2D"]
 script = ExtResource("1_4k2bo")
