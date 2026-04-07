@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://qqi2fqeynsck"]
+[gd_scene load_steps=24 format=4 uid="uid://qqi2fqeynsck"]
 
 [ext_resource type="Script" uid="uid://b876sisehlmhp" path="res://Level Scenes/food_level.gd" id="1_u0ifr"]
 [ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="2_u6bpj"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://djdkjtal3i312" path="res://Level Scenes/player_camera2.gd" id="14_0nqj5"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="14_cpqf6"]
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="15_0nqj5"]
+[ext_resource type="Script" uid="uid://bc2kl3jcdtkrl" path="res://Level Scenes/pause_menu_controller.gd" id="16_lcfig"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_43dj5"]
 tile_data = PackedInt32Array(0, 393217, 2, 65536, 393217, 2, 131072, 393217, 2, 196608, 393217, 2, 262144, 393217, 2, 1, 393217, 2, 65537, 393217, 2, 131073, 393217, 2, 196609, 393217, 2, 262145, 393217, 2, 2, 393217, 2, 65538, 393217, 2, 131074, 393217, 2, 196610, 393217, 2, 262146, 393217, 2, 3, 393217, 2, 65539, 393217, 2, 131075, 393217, 2, 196611, 393217, 2, 262147, 393217, 2, 4, 393217, 2, 65540, 393217, 2, 131076, 393217, 2, 196612, 393217, 2, 262148, 393217, 2, 5, 458753, 2, 65541, 458753, 2, 131077, 458753, 2, 196613, 458753, 2, 262149, 458753, 2)
@@ -732,3 +733,47 @@ autowrap_mode = 2
 script = ExtResource("15_0nqj5")
 A = NodePath("")
 B = NodePath("")
+
+[node name="Pause_Menu" type="Control" parent="."]
+process_mode = 3
+z_index = 4096
+layout_mode = 3
+anchors_preset = 0
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+script = ExtResource("16_lcfig")
+
+[node name="Button" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Resume Game"
+
+[node name="Button2" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 151.0
+text = "Exit Game"
+
+[node name="Button3" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 120.0
+offset_bottom = 66.0
+text = "Restart Level"
+
+[node name="Button4" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 120.0
+offset_bottom = 101.0
+text = "Main Menu
+"
+
+[connection signal="pressed" from="Pause_Menu/Button" to="Pause_Menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button2" to="Pause_Menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button3" to="Pause_Menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button4" to="Pause_Menu" method="_on_main_pressed"]

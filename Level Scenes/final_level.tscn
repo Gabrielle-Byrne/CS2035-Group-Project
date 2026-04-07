@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bn0u21bb062kv"]
+[gd_scene load_steps=27 format=4 uid="uid://bn0u21bb062kv"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_mkvud"]
 [ext_resource type="Script" uid="uid://cqlxinfo74wid" path="res://Level Scenes/final_level.gd" id="1_ml21q"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ddb2lm5qwllka" path="res://Game Objects/linked_platform.tscn" id="14_drgkx"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="16_deais"]
 [ext_resource type="Script" uid="uid://djdkjtal3i312" path="res://Level Scenes/player_camera2.gd" id="17_6nn7t"]
+[ext_resource type="Script" uid="uid://bc2kl3jcdtkrl" path="res://Level Scenes/pause_menu_controller.gd" id="19_5npil"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_24rg2"]
 tile_data = PackedInt32Array(0, 65539, 0, 1, 131075, 0, 2, 196611, 0)
@@ -879,3 +880,47 @@ autowrap_mode = 2
 script = ExtResource("8_gdaqq")
 A = NodePath("")
 B = NodePath("")
+
+[node name="Pause_Menu" type="Control" parent="."]
+process_mode = 3
+z_index = 4096
+layout_mode = 3
+anchors_preset = 0
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+script = ExtResource("19_5npil")
+
+[node name="Button" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Resume Game"
+
+[node name="Button2" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 151.0
+text = "Exit Game"
+
+[node name="Button3" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 120.0
+offset_bottom = 66.0
+text = "Restart Level"
+
+[node name="Button4" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 120.0
+offset_bottom = 101.0
+text = "Main Menu
+"
+
+[connection signal="pressed" from="Pause_Menu/Button" to="Pause_Menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button2" to="Pause_Menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button3" to="Pause_Menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button4" to="Pause_Menu" method="_on_main_pressed"]

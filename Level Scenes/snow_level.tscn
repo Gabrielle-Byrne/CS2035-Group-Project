@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://0cay7blph5gg"]
+[gd_scene load_steps=15 format=4 uid="uid://0cay7blph5gg"]
 
 [ext_resource type="Script" uid="uid://ct7wvk4d0koyy" path="res://Level Scenes/snow_level_controller.gd" id="1_0q5if"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_ligv6"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="6_bjg0i"]
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_mcjye"]
 [ext_resource type="Script" uid="uid://djdkjtal3i312" path="res://Level Scenes/player_camera2.gd" id="10_l7xdu"]
+[ext_resource type="Script" uid="uid://bc2kl3jcdtkrl" path="res://Level Scenes/pause_menu_controller.gd" id="12_qaj2k"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0q5if"]
 polygon = PackedVector2Array(-352, 304, -351, 288, -368, 288, -367, 272, -383, 271, -384, 256, -415, 255, -415, 240, -450, 239, -449, 304)
@@ -126,7 +127,50 @@ script = ExtResource("7_mcjye")
 A = NodePath("")
 B = NodePath("")
 
+[node name="Pause_Menu" type="Control" parent="."]
+process_mode = 3
+z_index = 4096
+layout_mode = 3
+anchors_preset = 0
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+script = ExtResource("12_qaj2k")
+
+[node name="Button" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Resume Game"
+
+[node name="Button2" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 151.0
+text = "Exit Game"
+
+[node name="Button3" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 120.0
+offset_bottom = 66.0
+text = "Restart Level"
+
+[node name="Button4" type="Button" parent="Pause_Menu"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 120.0
+offset_bottom = 101.0
+text = "Main Menu
+"
+
 [connection signal="button_pressed" from="Level/Button_up" to="Level/SnowPlatform" method="_on_button_up_button_pressed"]
 [connection signal="button_unpressed" from="Level/Button_up" to="Level/SnowPlatform" method="_on_button_unpressed"]
 [connection signal="button_pressed" from="Level/Button_down" to="Level/SnowPlatform" method="_on_button_down_button_pressed"]
 [connection signal="button_unpressed" from="Level/Button_down" to="Level/SnowPlatform" method="_on_button_unpressed"]
+[connection signal="pressed" from="Pause_Menu/Button" to="Pause_Menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button2" to="Pause_Menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button3" to="Pause_Menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="Pause_Menu/Button4" to="Pause_Menu" method="_on_main_pressed"]
