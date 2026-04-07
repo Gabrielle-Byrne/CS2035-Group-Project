@@ -1,26 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy3ggnghsl85s"]
+[gd_scene load_steps=6 format=3 uid="uid://digtk2xrf7k1e"]
 
-[ext_resource type="Script" uid="uid://cewufjrlk22j8" path="res://Game Objects/carryable_block.gd" id="1_bu482"]
-[ext_resource type="Texture2D" uid="uid://28sjifctr1oh" path="res://TileSets-Sprites/carriableBlock.png" id="1_nt5gc"]
+[ext_resource type="Script" uid="uid://cewufjrlk22j8" path="res://Game Objects/carryable_block.gd" id="1_w3rha"]
+[ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="2_w3rha"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu482"]
-size = Vector2(18, 18)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqbn"]
+size = Vector2(16, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gplwl"]
-size = Vector2(10, 15)
+size = Vector2(9, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_157ao"]
-size = Vector2(10, 15)
+size = Vector2(9, 15)
 
-[node name="carryableBlock" type="CharacterBody2D"]
+[node name="food" type="CharacterBody2D" groups=["Food"]]
 collision_mask = 3
-script = ExtResource("1_bu482")
+script = ExtResource("1_w3rha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bu482")
+shape = SubResource("RectangleShape2D_abqbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_nt5gc")
+texture = ExtResource("2_w3rha")
+region_enabled = true
+region_rect = Rect2(210.153, 38.1195, 15.949, 17.8806)
 
 [node name="leftPushableArea" type="Area2D" parent="."]
 

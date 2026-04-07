@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://17b85l4iafp1"]
+[gd_scene load_steps=12 format=4 uid="uid://17b85l4iafp1"]
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://Level Scenes/main.gd" id="1_vyytr"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_2fgje"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_hgsx3"]
 [ext_resource type="Script" uid="uid://b8piwe66sx7cb" path="res://Player/player_a.gd" id="4_w0scc"]
+[ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="5_vyytr"]
 [ext_resource type="PackedScene" uid="uid://dhgxh8alcsgk3" path="res://Game Objects/block.tscn" id="5_waaln"]
 [ext_resource type="PackedScene" uid="uid://b0adr0djeb5td" path="res://Game Objects/key.tscn" id="6_won18"]
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_jh71k"]
@@ -33,8 +34,11 @@ position = Vector2(-102, 157)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
 
+[node name="carryableBlock" parent="." instance=ExtResource("5_vyytr")]
+position = Vector2(1, 175)
+
 [node name="Block" parent="." instance=ExtResource("5_waaln")]
-position = Vector2(-2, 175)
+position = Vector2(165, 306)
 
 [node name="Key" parent="." instance=ExtResource("6_won18")]
 position = Vector2(57, 144)

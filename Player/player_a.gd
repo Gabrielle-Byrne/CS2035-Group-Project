@@ -58,8 +58,9 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var block = collision.get_collider()
-		if is_instance_valid(block) and block.is_in_group("Block") and abs(block.get_linear_velocity().x) < MAX_VELOCITY:
-			block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
+		if is_instance_valid(block) and block.is_in_group("Block") and abs(block.velocity.x) < MAX_VELOCITY:
+			block.velocity.x += collision.get_normal().x * -PUSH_FORCE
+			#block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
 		if is_instance_valid(block) and block.is_in_group("Lock") and has_key:
 			block.call_deferred("queue_free") 
 	
