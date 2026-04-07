@@ -43,11 +43,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjs8g"]
 size = Vector2(47, 1)
 
-[node name="Hungry" type="CharacterBody2D"]
+[node name="Hungry" type="CharacterBody2D" groups=["HungryBoi"]]
 collision_mask = 3
 script = ExtResource("1_ft68a")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["HungryBoi"]]
 shape = SubResource("RectangleShape2D_ft68a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

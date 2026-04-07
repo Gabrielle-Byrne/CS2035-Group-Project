@@ -34,7 +34,6 @@ var current_state = States.IDLE
 
 func _ready():
 	left_wander_bounds = self.position + Vector2(-50, 0)
-
 	right_wander_bounds = self.position + Vector2(50, 0)
 	
 	currentScaleX = currentScaleX * self.scale.x
@@ -202,3 +201,25 @@ func handle_gravity(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	current_state = States.WANDER # Replace with function body.
+
+
+func _on_turn_around_zone_turn_around() -> void:
+	print("Turning")
+	for ray in rays:
+		ray.enabled = false
+			
+	if direction.x == 1:
+		direction = Vector2(-1, 0)
+		sprite.scale.x = currentScaleX
+	elif direction.x == -1:
+		direction = Vector2(1, 0)
+		sprite.scale.x = -currentScaleX
+		
+	if current_state == States.CHASE:
+		current_state = States.WANDER
+		
+	#Once turned around, re-enable the rays
+	for ray in rays:
+		ray.enabled = true
+		
+	#return  
