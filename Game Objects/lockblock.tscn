@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://kvlt40eiyvu3"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4mx37"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_aqux1"]
+mesh = SubResource("ArrayMesh_4mx37")
+
+[node name="Lockblock" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("MeshTexture_aqux1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

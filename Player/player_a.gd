@@ -4,6 +4,7 @@ const SPEED = 200
 const JUMP_VELOCITY = -400.0
 const PUSH_FORCE = 50
 const MAX_VELOCITY = 100
+var has_key = false
 
 @export var wind_speed = 0
 
@@ -12,12 +13,16 @@ var target_object: Node2D
 
 var facingDirection
 
+@onready var JumpSound : AudioStreamPlayer2D = $JumpSound
+@onready var PickupSound = $PickupSound
+
 var held_object: Node2D
 
 @onready var carry_position: Marker2D = $CarryPosition
 
 func _ready():
 	$AnimatedSprite2D.play("A")
+	has_key = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,7 +31,12 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("a_jump") and is_on_floor():
+		JumpSound.play()
 		velocity.y = JUMP_VELOCITY
+	
+	if position.y < -1000:
+		position.y = 100;
+		position.x = 100;
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("a_left", "a_right")
@@ -48,10 +58,15 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var block = collision.get_collider()
-		if block.is_in_group("Block") and abs(block.velocity.x) < MAX_VELOCITY:
-			# For CharacterBody2D blocks, just add to their velocity
+		if is_instance_valid(block) and block.is_in_group("Block") and abs(block.velocity.x) < MAX_VELOCITY:
 			block.velocity.x += collision.get_normal().x * -PUSH_FORCE
+			#block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
+		if is_instance_valid(block) and block.is_in_group("Lock") and has_key:
+			block.call_deferred("queue_free") 
 	
+	if PickupSound != null:
+		PickupSound.play()
+		
 	if held_object:
 		drop_object()
 	else:
@@ -90,3 +105,6 @@ func _on_pickup_range_body_exited(body: Node2D) -> void:
 	if body is Carryable:
 		is_in_range = false
 		target_object = null
+
+func _on_key_keyed() -> void:
+	has_key = true

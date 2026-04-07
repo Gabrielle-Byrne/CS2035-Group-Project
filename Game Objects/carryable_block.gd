@@ -7,7 +7,7 @@ var current_platform: Node2D = null
 
 var is_pushed: bool = false
 var direction = 0
-var SLIDE_SPEED: float = 60
+var SLIDE_SPEED: float = 120
 
 func _physics_process(delta: float) -> void:
 	if !is_carried:
@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	elif is_carried:
 		velocity = Vector2.ZERO
+		
 
 func set_platform(platform: Node2D):
 	current_platform = platform
@@ -31,18 +32,18 @@ func clear_platform():
 func _on_left_pushable_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player_A" or body.name == "Player_B":
 		if body.name == "Player_A":
-			SLIDE_SPEED = 60
+			SLIDE_SPEED = 120
 		else:
-			SLIDE_SPEED = 30
+			SLIDE_SPEED = 60
 		direction = 1
 		is_pushed = true
 
 func _on_right_pushable_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player_A" or body.name == "Player_B":
 		if body.name == "Player_A":
-			SLIDE_SPEED = 60
+			SLIDE_SPEED = 120
 		else:
-			SLIDE_SPEED = 30
+			SLIDE_SPEED = 60
 		direction = -1
 		is_pushed = true
 
