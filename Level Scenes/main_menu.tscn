@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://vrgrmyi7xcpq"]
+[gd_scene load_steps=10 format=4 uid="uid://vrgrmyi7xcpq"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_4vd65"]
 [ext_resource type="Script" uid="uid://d03yc1hkh5bc" path="res://Level Scenes/main_menu.gd" id="1_e7kwj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="4_fiw0f"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="5_ci7x6"]
 [ext_resource type="Texture2D" uid="uid://bxoitjh10i1y4" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="6_tcpys"]
+[ext_resource type="Texture2D" uid="uid://bvs6r15igdtn" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-characters.png" id="7_nsy20"]
 
 [sub_resource type="Theme" id="Theme_4vd65"]
 
@@ -44,14 +45,15 @@ autoplay = true
 parameters/looping = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 266.0
-offset_top = 335.0
-offset_right = 449.0
-offset_bottom = 543.0
+offset_left = 201.0
+offset_top = 264.0
+offset_right = 330.0
+offset_bottom = 368.0
 theme = SubResource("Theme_ci7x6")
-text = "This is A
-This is B
-They must work together"
+text = "< -This is Allen
+This is Buge ->
+They must work
+together"
 
 [node name="Tilemap-backgroundsPacked" type="Sprite2D" parent="."]
 z_index = -1
@@ -61,10 +63,24 @@ texture = ExtResource("6_tcpys")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = 260.0
-offset_top = 329.0
-offset_right = 398.0
-offset_bottom = 433.0
+offset_left = 195.0
+offset_top = 265.0
+offset_right = 333.0
+offset_bottom = 369.0
 color = Color(0.176471, 0.768627, 0.341176, 1)
+
+[node name="Allen" type="Sprite2D" parent="."]
+position = Vector2(132, 305)
+scale = Vector2(4.04167, 4.41667)
+texture = ExtResource("7_nsy20")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24.5)
+
+[node name="Allen2" type="Sprite2D" parent="."]
+position = Vector2(399, 310)
+scale = Vector2(4.04167, 4.41667)
+texture = ExtResource("7_nsy20")
+region_enabled = true
+region_rect = Rect2(153, 24.5, 21, 24)
 
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
