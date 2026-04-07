@@ -90,4 +90,16 @@ region_rect = Rect2(153, 24.5, 21, 24)
 position = Vector2(650, 369)
 zoom = Vector2(0.9, 0.9)
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 22.0
+offset_top = 521.0
+offset_right = 535.0
+offset_bottom = 691.0
+text = "A game by:
+Ben Howe
+Gabrielle Byrne
+Gia Hy Pham
+Mackenzie Cooper
+"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]

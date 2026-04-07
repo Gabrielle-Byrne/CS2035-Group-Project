@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://0cay7blph5gg"]
+[gd_scene load_steps=16 format=4 uid="uid://0cay7blph5gg"]
 
 [ext_resource type="Script" uid="uid://ct7wvk4d0koyy" path="res://Level Scenes/snow_level_controller.gd" id="1_0q5if"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_ligv6"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_mcjye"]
 [ext_resource type="Script" uid="uid://djdkjtal3i312" path="res://Level Scenes/player_camera2.gd" id="10_l7xdu"]
 [ext_resource type="Script" uid="uid://bc2kl3jcdtkrl" path="res://Level Scenes/pause_menu_controller.gd" id="12_qaj2k"]
+[ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="13_84v71"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0q5if"]
 polygon = PackedVector2Array(-352, 304, -351, 288, -368, 288, -367, 272, -383, 271, -384, 256, -415, 255, -415, 240, -450, 239, -449, 304)
@@ -165,6 +166,11 @@ offset_right = 120.0
 offset_bottom = 101.0
 text = "Main Menu
 "
+
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_84v71")
+autoplay = true
+parameters/looping = false
 
 [connection signal="button_pressed" from="Level/Button_up" to="Level/SnowPlatform" method="_on_button_up_button_pressed"]
 [connection signal="button_unpressed" from="Level/Button_up" to="Level/SnowPlatform" method="_on_button_unpressed"]

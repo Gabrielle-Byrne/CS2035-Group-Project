@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c0ivw3xlujf4k"]
+[gd_scene load_steps=25 format=4 uid="uid://c0ivw3xlujf4k"]
 
 [ext_resource type="Script" uid="uid://b876sisehlmhp" path="res://Level Scenes/food_level.gd" id="1_4k2bo"]
 [ext_resource type="Texture2D" uid="uid://bxoitjh10i1y4" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_4ak3y"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="14_x1yft"]
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="15_x1yft"]
 [ext_resource type="Script" uid="uid://bc2kl3jcdtkrl" path="res://Level Scenes/pause_menu_controller.gd" id="16_2180v"]
+[ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="17_iewwh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_43dj5"]
 tile_data = PackedInt32Array(0, 393217, 2, 65536, 393217, 2, 131072, 393217, 2, 196608, 393217, 2, 262144, 393217, 2, 1, 393217, 2, 65537, 393217, 2, 131073, 393217, 2, 196609, 393217, 2, 262145, 393217, 2, 2, 393217, 2, 65538, 393217, 2, 131074, 393217, 2, 196610, 393217, 2, 262146, 393217, 2, 3, 393217, 2, 65539, 393217, 2, 131075, 393217, 2, 196611, 393217, 2, 262147, 393217, 2, 4, 393217, 2, 65540, 393217, 2, 131076, 393217, 2, 196612, 393217, 2, 262148, 393217, 2, 5, 458753, 2, 65541, 458753, 2, 131077, 458753, 2, 196613, 458753, 2, 262149, 458753, 2)
@@ -786,6 +787,11 @@ offset_right = 120.0
 offset_bottom = 101.0
 text = "Main Menu
 "
+
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_iewwh")
+autoplay = true
+parameters/looping = false
 
 [connection signal="turnAround" from="turnAroundZone" to="Hungry" method="_on_turn_around_zone_turn_around"]
 [connection signal="turnAround" from="turnAroundZone2" to="Hungry" method="_on_turn_around_zone_turn_around"]
