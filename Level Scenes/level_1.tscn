@@ -20,10 +20,12 @@ tile_map_data = PackedByteArray("AAADAA0AAQACAAAAAAAEAA0AAQACAAAAAAAFAA0AAQACAAA
 tile_set = ExtResource("2_c1vm0")
 
 [node name="Player_A" parent="." instance=ExtResource("3_hcikv")]
+visible = true
 position = Vector2(316, 91)
 script = ExtResource("4_nsi6k")
 
 [node name="Player_B" parent="." instance=ExtResource("3_hcikv")]
+visible = true
 position = Vector2(-369, 155)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

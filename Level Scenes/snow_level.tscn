@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://0cay7blph5gg"]
 
-[ext_resource type="Script" uid="uid://ct7wvk4d0koyy" path="res://Level Scenes/snow_level_controller.gd" id="1_0q5if"]
+[ext_resource type="Script" path="res://Level Scenes/snow_level_controller.gd" id="1_0q5if"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_ligv6"]
 [ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_cmnf2"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_7ohxt"]

@@ -59,8 +59,8 @@ vertical_alignment = 1
 
 [node name="Tilemap-backgroundsPacked" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(608, 376)
-scale = Vector2(7.20052, 10.0139)
+position = Vector2(609.625, 368.25)
+scale = Vector2(7.18359, 10.2292)
 texture = ExtResource("6_tcpys")
 
 [node name="ColorRect" type="ColorRect" parent="."]
