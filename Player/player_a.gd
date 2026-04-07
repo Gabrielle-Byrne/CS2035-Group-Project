@@ -4,6 +4,7 @@ const SPEED = 200
 const JUMP_VELOCITY = -400.0
 const PUSH_FORCE = 50
 const MAX_VELOCITY = 100
+var has_key = false
 
 var is_in_range: bool = false
 var target_object: Node2D
@@ -19,6 +20,7 @@ var held_object: Node2D
 
 func _ready():
 	$AnimatedSprite2D.play("A")
+	has_key = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -55,8 +57,10 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var block = collision.get_collider()
-		if block.is_in_group("Block") and abs(block.get_linear_velocity().x) < MAX_VELOCITY:
+		if is_instance_valid(block) and block.is_in_group("Block") and abs(block.get_linear_velocity().x) < MAX_VELOCITY:
 			block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
+		if is_instance_valid(block) and block.is_in_group("Lock") and has_key:
+			block.call_deferred("queue_free") 
 	
 	if PickupSound != null:
 		PickupSound.play()
@@ -96,3 +100,6 @@ func _on_pickup_range_body_exited(body: Node2D) -> void:
 	if body is Carryable:
 		is_in_range = false
 		target_object = null
+
+func _on_key_keyed() -> void:
+	has_key = true

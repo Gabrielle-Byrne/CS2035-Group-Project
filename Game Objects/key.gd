@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 200
 var is_following = false
 var target = null
+signal keyed
 
 func _ready():
 	$CollisionShape2D.disabled = false
@@ -13,12 +14,12 @@ func _process(delta):
 func handleCollisions():
 	for index in range(get_slide_collision_count()):
 		var collision = get_slide_collision(index)
-		print("Collided with: ", collision.get_collider().name)
 		if collision.get_collider() == null:
 			continue
 		if collision.get_collider().is_in_group("Player"):
 			target = collision.get_collider()
 			is_following = true
+			keyed.emit()
 			$CollisionShape2D.set_deferred("disabled", true)
 			break
 

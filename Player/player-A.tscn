@@ -73,7 +73,7 @@ position = Vector2(0, -14)
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vqe88")
 
-[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." groups=["Player"]]
 stream = ExtResource("4_jff03")
 
 [connection signal="body_entered" from="PickupRange" to="." method="_on_pickup_range_body_entered"]
