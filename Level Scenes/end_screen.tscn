@@ -1,0 +1,222 @@
+[gd_scene load_steps=22 format=4 uid="uid://dci07rbr17p4o"]
+
+[ext_resource type="Script" uid="uid://b3oucb2m46vfg" path="res://Level Scenes/end_screen.gd" id="1_dxdmp"]
+[ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_1pvka"]
+[ext_resource type="AudioStream" uid="uid://44aw45m0f6wi" path="res://Sound_Music/mondamusic-retro-arcade-game-music-487316.mp3" id="5_dv1u0"]
+[ext_resource type="Texture2D" uid="uid://b6lf1cqmybyt7" path="res://TileSets-Sprites/Character_Sprite_Sheet.png" id="6_dxdmp"]
+
+[sub_resource type="Theme" id="Theme_4vd65"]
+
+[sub_resource type="Theme" id="Theme_ci7x6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2jrh"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pvka"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujlho"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(50, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmhd5"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(74, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv1u0"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(150, 26, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wg87"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(174, 26, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnmeb"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(0, 25, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wolj"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(24, 25, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dib4p"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(100, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_715ix"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(124, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfi4j"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(150, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojvjd"]
+atlas = ExtResource("6_dxdmp")
+region = Rect2(174, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7h42b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2jrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pvka")
+}],
+"loop": true,
+"name": &"Allen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujlho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmhd5")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv1u0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wg87")
+}],
+"loop": true,
+"name": &"Bug",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnmeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wolj")
+}],
+"loop": true,
+"name": &"Orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dib4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_715ix")
+}],
+"loop": true,
+"name": &"Pink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfi4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojvjd")
+}],
+"loop": true,
+"name": &"Yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_dxdmp"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v2jrh"]
+gradient = SubResource("Gradient_dxdmp")
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_dxdmp")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-40, -18)
+tile_map_data = PackedByteArray("AAAWAAYAAQASAAEAAAAVAAYAAQASAAEAAAAVAAcAAQASAAEAAAAUAAgAAQASAAEAAAAUAAkAAQASAAEAAAAUAAoAAQASAAEAAAAVAAoAAQASAAEAAAAVAAsAAQASAAEAAAAVAAwAAQASAAEAAAAWAAwAAQASAAEAAAAWAA0AAQASAAEAAAAXAA0AAQASAAEAAAAYAA0AAQASAAEAAAAZAA0AAQASAAEAAAAaAA0AAQASAAEAAAAbAA0AAQASAAEAAAAbAAwAAQASAAEAAAAbAAsAAQASAAEAAAAcAAsAAQASAAEAAAAcAAoAAQASAAEAAAAcAAkAAQASAAEAAAAcAAgAAQASAAEAAAAcAAcAAQASAAEAAAAbAAYAAQASAAEAAAAYAAUAAQASAAEAAAAXAAUAAQASAAEAAAAZAAUAAQASAAEAAAAaAAUAAQASAAEAAAAjAA4AAgAOAAEAAAAkAA4AAgAOAAEAAAAkAA0AAgAOAAEAAAAlAA0AAgAOAAEAAAAlAAwAAgAOAAEAAAAmAAwAAgAOAAEAAAAmAAsAAgAOAAEAAAAnAAsAAgAOAAEAAAAnAAoAAgAOAAEAAAAnAAkAAgAOAAEAAAAnAAgAAgAOAAEAAAAnAAcAAgAOAAEAAAAmAAYAAgAOAAEAAAAlAAYAAgAOAAEAAAAkAAUAAgAOAAEAAAAjAAUAAgAOAAEAAAAiAAUAAgAOAAEAAAAhAAUAAgAOAAEAAAAhAAYAAgAOAAEAAAAgAAYAAgAOAAEAAAAgAAcAAgAOAAEAAAAfAAcAAgAOAAEAAAAfAAgAAgAOAAEAAAAfAAkAAgAOAAEAAAAeAAkAAgAOAAEAAAAeAAoAAgAOAAEAAAAfAAoAAgAOAAEAAAAfAAsAAgAOAAEAAAAfAAwAAgAOAAEAAAAgAAwAAgAOAAEAAAAgAA0AAgAOAAEAAAAhAA0AAgAOAAEAAAAiAA0AAgAOAAEAAAAjAA0AAgAOAAEAAAApAA4AAgAFAAYAAAApAA0AAgAFAAYAAAApAAwAAgAFAAYAAAApAAsAAgAFAAYAAAAqAAsAAgAFAAYAAAAqAAoAAgAFAAYAAAAqAAkAAgAFAAYAAAAqAAgAAgAFAAYAAAAqAAcAAgAFAAYAAAArAAcAAgAFAAYAAAArAAYAAgAFAAYAAAArAAgAAgAFAAYAAAAsAAgAAgAFAAYAAAAsAAkAAgAFAAYAAAAsAAoAAgAFAAYAAAAtAAoAAgAFAAYAAAAtAAsAAgAFAAYAAAAtAAwAAgAFAAYAAAAuAAwAAgAFAAYAAAAuAA0AAgAFAAYAAAAuAA4AAgAFAAYAAAAvAA0AAgAFAAYAAAAvAAwAAgAFAAYAAAAvAAsAAgAFAAYAAAAvAAoAAgAFAAYAAAAvAAkAAgAFAAYAAAAvAAgAAgAFAAYAAAAwAAgAAgAFAAYAAAAwAAcAAgAFAAYAAAAFAAwAAwAGAAMAAAAFAAsAAwAGAAMAAAAGAAsAAwAGAAMAAAAGAAoAAwAGAAMAAAAGAAkAAwAGAAMAAAAHAAkAAwAGAAMAAAAHAAgAAwAGAAMAAAAHAAcAAwAGAAMAAAAIAAcAAwAGAAMAAAAIAAYAAwAGAAMAAAAJAAYAAwAGAAMAAAAJAAcAAwAGAAMAAAAKAAgAAwAGAAMAAAAKAAkAAwAGAAMAAAAKAAoAAwAGAAMAAAALAAoAAwAGAAMAAAALAAkAAwAGAAMAAAALAAgAAwAGAAMAAAALAAcAAwAGAAMAAAALAAYAAwAGAAMAAAAMAAYAAwAGAAMAAAAMAAUAAwAGAAMAAAANAAUAAwAGAAMAAAANAAQAAwAGAAMAAAAOAAUAAwAGAAMAAAAOAAYAAwAGAAMAAAAPAAYAAwAGAAMAAAAPAAcAAwAGAAMAAAAQAAgAAwAGAAMAAAAQAAkAAwAGAAMAAAARAAkAAwAGAAMAAAARAAoAAwAGAAMAAAARAAsAAwAGAAMAAAASAAsAAwAGAAMAAAASAAwAAwAGAAMAAAA0AAgAAwACAAIAAAA0AAkAAwACAAIAAAA0AAoAAwACAAIAAAAzAAsAAwACAAIAAAAzAAwAAwACAAIAAAAzAA0AAwACAAIAAAAzAA4AAwACAAIAAAAzAA8AAwACAAIAAAA0AA8AAwACAAIAAAA0ABAAAwACAAIAAAA1ABAAAwACAAIAAAA2ABAAAwACAAIAAAA3ABAAAwACAAIAAAA3AA8AAwACAAIAAAA4AA8AAwACAAIAAAA4AA4AAwACAAIAAAA4AA0AAwACAAIAAAA4AAwAAwACAAIAAAA3AAwAAwACAAIAAAA2AAwAAwACAAIAAAA1AAwAAwACAAIAAAA1AAsAAwACAAIAAAA0AAsAAwACAAIAAAA2AAsAAwACAAIAAAA3AAsAAwACAAIAAAA3AAoAAwACAAIAAAA4AAoAAwACAAIAAAA4AAkAAwACAAIAAAA5AAgAAwACAAIAAAA5AAcAAwACAAIAAAA4AAcAAwACAAIAAAA4AAYAAwACAAIAAAA3AAYAAwACAAIAAAA3AAcAAwACAAIAAAA2AAcAAwACAAIAAAA1AAcAAwACAAIAAAA1AAgAAwACAAIAAAA9AAgABAANAAIAAAA9AAkABAANAAIAAAA9AAoABAANAAIAAAA8AAoABAANAAIAAAA8AAsABAANAAIAAAA8AAwABAANAAIAAAA8AA0ABAANAAIAAAA8AA4ABAANAAIAAAA8AA8ABAANAAIAAAA9AA8ABAANAAIAAAA9ABAABAANAAIAAAA+ABAABAANAAIAAAA+ABEABAANAAIAAAA/ABEABAANAAIAAABAABEABAANAAIAAABBABAABAANAAIAAABCAA8ABAANAAIAAABCAA4ABAANAAIAAABCAA0ABAANAAIAAABDAAwABAANAAIAAABDAAsABAANAAIAAABDAAoABAANAAIAAABCAAoABAANAAIAAABCAAkABAANAAIAAABBAAkABAANAAIAAABBAAgABAANAAIAAABAAAgABAANAAIAAAA/AAgABAANAAIAAAA+AAgABAANAAIAAABGAAkABAAPAAEAAABGAAoABAAPAAEAAABGAAsABAAPAAEAAABGAAwABAAPAAEAAABGAA0ABAAPAAEAAABFAA4ABAAPAAEAAABFAA8ABAAPAAEAAABFABAABAAPAAEAAABEABAABAAPAAEAAABEABEABAAPAAEAAABEABIABAAPAAEAAABEABMABAAPAAEAAABFABMABAAPAAEAAABGABMABAAPAAEAAABHABMABAAPAAEAAABIABMABAAPAAEAAABJABMABAAPAAEAAABKABIABAAPAAEAAABLABEABAAPAAEAAABLABAABAAPAAEAAABLAA8ABAAPAAEAAABLAA4ABAAPAAEAAABLAA0ABAAPAAEAAABLAAwABAAPAAEAAABDABgABAAPAAEAAABEABcABAAPAAEAAABFABcABAAPAAEAAABFABYABAAPAAEAAABGABYABAAPAAEAAABHABYABAAPAAEAAABIABUABAAPAAEAAABJABUABAAPAAEAAABKABQABAAPAAEAAABLABQABAAPAAEAAABMABQABAAPAAEAAABMABUABAAPAAEAAABLABYABAAPAAEAAABLABcABAAPAAEAAABKABgABAAPAAEAAABJABkABAAPAAEAAABJABoABAAPAAEAAABIABsABAAPAAEAAABIABwABAAPAAEAAABHAB0ABAAPAAEAAABHAB4ABAAPAAEAAABGAB8ABAAPAAEAAABHAB8ABAAPAAEAAABIAB8ABAAPAAEAAABJAB4ABAAPAAEAAABKAB4ABAAPAAEAAABLAB4ABAAPAAEAAABMAB0ABAAPAAEAAABNABwABAAPAAEAAABOABwABAAPAAEAAABPABsABAAPAAEAAABOACAABAAPAAEAAABNACEABAAPAAEAAABNACIABAAPAAEAAABMACIABAAPAAEAAABLACMABAAPAAEAAABKACMABAAPAAEAAABJACQABAAPAAEAAABIACUABAAPAAEAAABIACYABAAPAAEAAABHACYABAAPAAEAAABHACcABAAPAAEAAABIACgABAAPAAEAAABJACgABAAPAAEAAABKACkABAAPAAEAAABLACkABAAPAAEAAABMACkABAAPAAEAAABNACkABAAPAAEAAABOACkABAAPAAEAAABOACgABAAPAAEAAABPACgABAAPAAEAAABPACcABAAPAAEAAABQACcABAAPAAEAAABQACYABAAPAAEAAABRACYABAAPAAEAAABRACUABAAPAAEAAABRACQABAAPAAEAAABRACMABAAPAAEAAABRACIABAAPAAEAAABQACEABAAPAAEAAABQACAABAAPAAEAAABPACAABAAPAAEAAABOAB8ABAAPAAEAAAA=")
+tile_set = ExtResource("2_1pvka")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 572.0
+offset_top = 511.0
+offset_right = 661.0
+offset_bottom = 554.0
+theme = SubResource("Theme_4vd65")
+theme_override_colors/icon_disabled_color = Color(4.81308e-06, 0, 0.911567, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.379009, 0.572699, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Play Again"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dv1u0")
+autoplay = true
+parameters/looping = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 41.0
+offset_top = 270.0
+offset_right = 514.0
+offset_bottom = 464.0
+focus_mode = 2
+theme = SubResource("Theme_ci7x6")
+text = "THANK YOU FROM
+Gabrielle Byrne
+Ben Howe
+Gia Hy Pham
+Mackenzie Cooper
+"
+tab_size = 6
+horizontal_alignment = 1
+vertical_alignment = 1
+selection_enabled = true
+
+[node name="Allen" type="AnimatedSprite2D" parent="."]
+position = Vector2(751, 365)
+scale = Vector2(4.04167, 4.41667)
+sprite_frames = SubResource("SpriteFrames_7h42b")
+animation = &"Allen"
+
+[node name="Bugby" type="AnimatedSprite2D" parent="."]
+position = Vector2(648, 376)
+scale = Vector2(4.04167, 4.41667)
+sprite_frames = SubResource("SpriteFrames_7h42b")
+animation = &"Bug"
+
+[node name="Allen3" type="AnimatedSprite2D" parent="."]
+position = Vector2(542, 371)
+scale = Vector2(4.04167, 4.41667)
+sprite_frames = SubResource("SpriteFrames_7h42b")
+animation = &"Blue"
+
+[node name="Allen4" type="AnimatedSprite2D" parent="."]
+position = Vector2(861, 368)
+scale = Vector2(4.04167, 4.41667)
+sprite_frames = SubResource("SpriteFrames_7h42b")
+animation = &"Pink"
+
+[node name="Allen5" type="AnimatedSprite2D" parent="."]
+position = Vector2(440, 368)
+scale = Vector2(4.04167, 4.41667)
+sprite_frames = SubResource("SpriteFrames_7h42b")
+animation = &"Yellow"
+
+[node name="Allen6" type="AnimatedSprite2D" parent="."]
+position = Vector2(962, 371)
+scale = Vector2(4.04167, 4.41667)
+sprite_frames = SubResource("SpriteFrames_7h42b")
+animation = &"Orange"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(648, 366)
+scale = Vector2(22.5625, 12.5625)
+texture = SubResource("GradientTexture2D_v2jrh")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]

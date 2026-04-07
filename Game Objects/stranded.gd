@@ -38,4 +38,5 @@ func handleCollisions():
 				var next_level = levels[i + 1]
 				get_tree().change_scene_to_file(next_level)
 			else:
-				get_tree().change_scene_to_file("res://Level Scenes/level_1.tscn")
+				if !(get_tree().current_scene.name=="res://Level Scenes/end.tscn"):
+					get_tree().change_scene_to_file("res://Level Scenes/end.tscn")

@@ -64,8 +64,6 @@ func _physics_process(delta: float) -> void:
 		if is_instance_valid(block) and block.is_in_group("Lock") and has_key:
 			block.call_deferred("queue_free") 
 	
-	if PickupSound != null:
-		PickupSound.play()
 		
 	if held_object:
 		drop_object()

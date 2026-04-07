@@ -651,6 +651,7 @@ position = Vector2(-441, 240)
 collision_mask = 3
 
 [node name="Player_B" parent="." instance=ExtResource("3_wtoaq")]
+visible = true
 position = Vector2(-463, 295)
 collision_mask = 3
 
