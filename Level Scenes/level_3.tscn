@@ -4,12 +4,12 @@
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_tvcqr"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_rdb2c"]
 [ext_resource type="Script" uid="uid://b8piwe66sx7cb" path="res://Player/player_a.gd" id="4_tq4nm"]
-[ext_resource type="PackedScene" uid="uid://dhgxh8alcsgk3" path="res://Game Objects/block.tscn" id="5_v0oq8"]
 [ext_resource type="PackedScene" uid="uid://b0adr0djeb5td" path="res://Game Objects/key.tscn" id="6_w82x7"]
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_7n4ul"]
 [ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="8_pgutk"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="9_60bqr"]
 [ext_resource type="PackedScene" uid="uid://b2aqu2rkyuhm0" path="res://Game Objects/lock.tscn" id="10_f728c"]
+[ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="11_tvcqr"]
 
 [node name="Level_3" type="Node2D"]
 script = ExtResource("1_2oiru")
@@ -30,9 +30,6 @@ position = Vector2(-369, 155)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
-
-[node name="Block" parent="." instance=ExtResource("5_v0oq8")]
-position = Vector2(-127, -93)
 
 [node name="Key" parent="." instance=ExtResource("6_w82x7")]
 position = Vector2(-158, 12)
@@ -95,6 +92,9 @@ position = Vector2(393, 90)
 
 [node name="Lock" parent="." instance=ExtResource("10_f728c")]
 position = Vector2(362, 102)
+
+[node name="carryableBlock" parent="." instance=ExtResource("11_tvcqr")]
+position = Vector2(-117, -96)
 
 [connection signal="keyed" from="Key" to="Player_A" method="_on_key_keyed"]
 [connection signal="keyed" from="Key" to="Player_B" method="_on_key_keyed"]
