@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://0cay7blph5gg"]
+[gd_scene load_steps=14 format=4 uid="uid://0cay7blph5gg"]
 
 [ext_resource type="Script" uid="uid://ct7wvk4d0koyy" path="res://Level Scenes/snow_level_controller.gd" id="1_0q5if"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_ligv6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="5_458hi"]
 [ext_resource type="PackedScene" uid="uid://dedp1f5x5ogk0" path="res://Game Objects/Snow_level_Object/cloud.tscn" id="5_cmnf2"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="6_bjg0i"]
+[ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_mcjye"]
 [ext_resource type="Script" uid="uid://djdkjtal3i312" path="res://Level Scenes/player_camera2.gd" id="10_l7xdu"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0q5if"]
@@ -99,6 +100,31 @@ position = Vector2(246, -159)
 zoom = Vector2(4, 4)
 script = ExtResource("10_l7xdu")
 player = NodePath("../Players/Player_B")
+
+[node name="InstructionHelp" type="Label" parent="." node_paths=PackedStringArray("A", "B")]
+offset_left = 475.0
+offset_top = 244.0
+offset_right = 548.0
+offset_bottom = 319.0
+text = "Help! I'm c-cold"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("7_mcjye")
+A = NodePath("")
+B = NodePath("")
+
+[node name="InstructionHelp2" type="Label" parent="." node_paths=PackedStringArray("A", "B")]
+visible = false
+offset_left = -330.0
+offset_top = -360.0
+offset_right = -257.0
+offset_bottom = -285.0
+text = "These buttons seem important..."
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("7_mcjye")
+A = NodePath("")
+B = NodePath("")
 
 [connection signal="button_pressed" from="Level/Button_up" to="Level/SnowPlatform" method="_on_button_up_button_pressed"]
 [connection signal="button_unpressed" from="Level/Button_up" to="Level/SnowPlatform" method="_on_button_unpressed"]

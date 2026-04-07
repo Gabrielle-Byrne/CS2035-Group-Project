@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c0ivw3xlujf4k"]
+[gd_scene load_steps=23 format=4 uid="uid://c0ivw3xlujf4k"]
 
 [ext_resource type="Script" uid="uid://b876sisehlmhp" path="res://Level Scenes/food_level.gd" id="1_4k2bo"]
 [ext_resource type="Texture2D" uid="uid://bxoitjh10i1y4" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_4ak3y"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bx8hviq51rlpb" path="res://Game Objects/turn_around_zone.tscn" id="11_bxdng"]
 [ext_resource type="Script" uid="uid://djdkjtal3i312" path="res://Level Scenes/player_camera2.gd" id="14_02dui"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="14_x1yft"]
+[ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="15_x1yft"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_43dj5"]
 tile_data = PackedInt32Array(0, 393217, 2, 65536, 393217, 2, 131072, 393217, 2, 196608, 393217, 2, 262144, 393217, 2, 1, 393217, 2, 65537, 393217, 2, 131073, 393217, 2, 196609, 393217, 2, 262145, 393217, 2, 2, 393217, 2, 65538, 393217, 2, 131074, 393217, 2, 196610, 393217, 2, 262146, 393217, 2, 3, 393217, 2, 65539, 393217, 2, 131075, 393217, 2, 196611, 393217, 2, 262147, 393217, 2, 4, 393217, 2, 65540, 393217, 2, 131076, 393217, 2, 196612, 393217, 2, 262148, 393217, 2, 5, 458753, 2, 65541, 458753, 2, 131077, 458753, 2, 196613, 458753, 2, 262149, 458753, 2)
@@ -707,6 +708,44 @@ position = Vector2(246, -159)
 zoom = Vector2(4, 4)
 script = ExtResource("14_02dui")
 player = NodePath("../Player_B")
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="InstructionHelp1" type="Label" parent="Text" node_paths=PackedStringArray("A", "B")]
+offset_left = -110.0
+offset_top = -221.0
+offset_right = -18.0
+offset_bottom = -146.0
+text = "I want mommy!"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("15_x1yft")
+A = NodePath("")
+B = NodePath("")
+
+[node name="InstructionHelp2" type="Label" parent="Text" node_paths=PackedStringArray("A", "B")]
+offset_left = -322.0
+offset_top = 194.0
+offset_right = -168.0
+offset_bottom = 269.0
+text = "These creatures seem hungry..."
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("15_x1yft")
+A = NodePath("")
+B = NodePath("")
+
+[node name="InstructionHelp3" type="Label" parent="Text" node_paths=PackedStringArray("A", "B")]
+offset_left = -469.0
+offset_top = 168.0
+offset_right = -315.0
+offset_bottom = 243.0
+text = "Press down to pick up a block"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("15_x1yft")
+A = NodePath("")
+B = NodePath("")
 
 [connection signal="turnAround" from="turnAroundZone" to="Hungry" method="_on_turn_around_zone_turn_around"]
 [connection signal="turnAround" from="turnAroundZone2" to="Hungry" method="_on_turn_around_zone_turn_around"]

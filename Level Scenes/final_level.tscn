@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bn0u21bb062kv"]
+[gd_scene load_steps=26 format=4 uid="uid://bn0u21bb062kv"]
 
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_mkvud"]
 [ext_resource type="Script" uid="uid://cqlxinfo74wid" path="res://Level Scenes/final_level.gd" id="1_ml21q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="4_v47br"]
 [ext_resource type="Texture2D" uid="uid://b66o467wuse7p" path="res://Assets/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap - Industrial.png" id="5_11xol"]
 [ext_resource type="Texture2D" uid="uid://dierevx1hb3qk" path="res://Assets/kenney_pixel-platformer/Tilemap/greenBackground.tres" id="7_drgkx"]
+[ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="8_gdaqq"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="10_v47br"]
 [ext_resource type="PackedScene" uid="uid://cfionpmso6kyh" path="res://Game Objects/moving_platform.tscn" id="11_11xol"]
 [ext_resource type="Script" uid="uid://ch6sivlf7c6gn" path="res://Game Objects/rope.gd" id="12_cbvfa"]
@@ -852,3 +853,29 @@ position = Vector2(246, -159)
 zoom = Vector2(4, 4)
 script = ExtResource("17_6nn7t")
 player = NodePath("../Player_B")
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="InstructionHelp1" type="Label" parent="Text" node_paths=PackedStringArray("A", "B")]
+z_index = 4
+offset_left = 12.0
+offset_top = -75.0
+offset_right = 151.0
+text = "4 boxes should be heavy enough to lift A..."
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("8_gdaqq")
+A = NodePath("")
+B = NodePath("")
+
+[node name="InstructionHelp2" type="Label" parent="Text" node_paths=PackedStringArray("A", "B")]
+offset_left = 550.0
+offset_top = -143.0
+offset_right = 631.0
+offset_bottom = -68.0
+text = "I want to go home!"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("8_gdaqq")
+A = NodePath("")
+B = NodePath("")

@@ -42,12 +42,11 @@ position = Vector2(-127, -93)
 position = Vector2(-158, 12)
 
 [node name="InstructionA" type="Label" parent="." node_paths=PackedStringArray("A", "B")]
-visible = false
-offset_left = -319.0
-offset_top = -145.0
-offset_right = -193.0
-offset_bottom = -96.0
-text = "A can push blocks quickly"
+offset_left = -35.0
+offset_top = 108.0
+offset_right = 91.0
+offset_bottom = 157.0
+text = "To look closer, use 'C'"
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("7_c1vm0")
@@ -59,7 +58,7 @@ offset_left = -319.0
 offset_top = 126.0
 offset_right = -221.0
 offset_bottom = 175.0
-text = "B can jump high"
+text = "Bugby can jump high"
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("7_c1vm0")

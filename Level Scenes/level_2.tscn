@@ -46,7 +46,7 @@ offset_left = -314.0
 offset_top = 104.0
 offset_right = -188.0
 offset_bottom = 153.0
-text = "A can push blocks quickly"
+text = "Allen can push blocks quickly"
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("7_jh71k")
@@ -68,10 +68,10 @@ B = NodePath("../Player_B")
 
 [node name="InstructionHelp" type="Label" parent="." node_paths=PackedStringArray("A", "B")]
 offset_left = 336.0
-offset_top = -32.0
+offset_top = 22.0
 offset_right = 428.0
-offset_bottom = 43.0
-text = "You need to get the key!"
+offset_bottom = 97.0
+text = "Help! Help!"
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("7_jh71k")
