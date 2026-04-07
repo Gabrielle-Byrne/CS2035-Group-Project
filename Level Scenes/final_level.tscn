@@ -703,11 +703,12 @@ z_index = 2
 position = Vector2(-600, 248)
 
 [node name="Player_B" parent="." instance=ExtResource("3_rptgv")]
+visible = true
 z_index = 2
 position = Vector2(-624, 251)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(0.9, 0.9)
 
 [node name="CarryableBlocks" type="Node2D" parent="."]
 
