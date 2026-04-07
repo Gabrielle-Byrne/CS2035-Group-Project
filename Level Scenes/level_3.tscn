@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c1lbsx8b6qe7u"]
+[gd_scene load_steps=12 format=4 uid="uid://c1lbsx8b6qe7u"]
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://Level Scenes/main.gd" id="1_2oiru"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_tvcqr"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="8_pgutk"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="9_60bqr"]
 [ext_resource type="PackedScene" uid="uid://b2aqu2rkyuhm0" path="res://Game Objects/lock.tscn" id="10_f728c"]
+[ext_resource type="Script" uid="uid://h4hw0ka00rvi" path="res://Level Scenes/player_camera1.gd" id="11_rdb2c"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="11_tvcqr"]
 
 [node name="Level_3" type="Node2D"]
@@ -30,7 +31,7 @@ position = Vector2(-369, 155)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Wide_Camera" type="Camera2D" parent="."]
 zoom = Vector2(1.35, 1.35)
 
 [node name="Key" parent="." instance=ExtResource("6_w82x7")]
@@ -97,6 +98,18 @@ position = Vector2(362, 102)
 
 [node name="carryableBlock" parent="." instance=ExtResource("11_tvcqr")]
 position = Vector2(-117, -96)
+
+[node name="PlayerA_Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(313, 94)
+zoom = Vector2(4, 4)
+script = ExtResource("11_rdb2c")
+player = NodePath("../Player_A")
+
+[node name="PlayerB_Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(246, -159)
+zoom = Vector2(4, 4)
+script = ExtResource("11_rdb2c")
+player = NodePath("../Player_B")
 
 [connection signal="keyed" from="Key" to="Player_A" method="_on_key_keyed"]
 [connection signal="keyed" from="Key" to="Player_B" method="_on_key_keyed"]

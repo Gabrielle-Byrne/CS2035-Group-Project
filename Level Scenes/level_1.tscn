@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_c1vm0"]
 [ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="9_gy5sw"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="10_gy5sw"]
-[ext_resource type="Script" uid="uid://h4hw0ka00rvi" path="res://Level Scenes/player_camera.gd" id="11_1xul6"]
+[ext_resource type="Script" uid="uid://h4hw0ka00rvi" path="res://Level Scenes/player_camera1.gd" id="11_1xul6"]
 [ext_resource type="PackedScene" uid="uid://b2aqu2rkyuhm0" path="res://Game Objects/lock.tscn" id="11_eajg8"]
 
 [node name="Level_1" type="Node2D"]
@@ -89,8 +89,17 @@ position = Vector2(393, 90)
 [node name="Lock" parent="." instance=ExtResource("11_eajg8")]
 position = Vector2(361, 99)
 
-[node name="PlayerA_Camera" type="Camera2D" parent="."]
+[node name="PlayerA_Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(313, 94)
+zoom = Vector2(4, 4)
 script = ExtResource("11_1xul6")
+player = NodePath("../Player_A")
+
+[node name="PlayerB_Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(212, 72)
+zoom = Vector2(4, 4)
+script = ExtResource("11_1xul6")
+player = NodePath("../Player_B")
 
 [connection signal="keyed" from="Key" to="Player_A" method="_on_key_keyed"]
 [connection signal="keyed" from="Key" to="Player_B" method="_on_key_keyed"]

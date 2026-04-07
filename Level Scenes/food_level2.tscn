@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://qqi2fqeynsck"]
+[gd_scene load_steps=22 format=4 uid="uid://qqi2fqeynsck"]
 
 [ext_resource type="Script" uid="uid://b876sisehlmhp" path="res://Level Scenes/food_level.gd" id="1_u0ifr"]
 [ext_resource type="Texture2D" uid="uid://bpjjvgnpyop07" path="res://Assets/kenney_pixel-platformer-food-expansion/Tilemap/tilemap - Food.png" id="2_u6bpj"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="7_fkers"]
 [ext_resource type="PackedScene" uid="uid://bx8hviq51rlpb" path="res://Game Objects/turn_around_zone.tscn" id="12_qljit"]
 [ext_resource type="Texture2D" uid="uid://bxoitjh10i1y4" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="13_2k5m6"]
+[ext_resource type="Script" uid="uid://djdkjtal3i312" path="res://Level Scenes/player_camera2.gd" id="14_0nqj5"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="14_cpqf6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_43dj5"]
@@ -647,7 +648,7 @@ visible = true
 position = Vector2(593, 274)
 collision_mask = 3
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Wide_Camera" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
 
 [node name="food" parent="." instance=ExtResource("6_3nrl7")]
@@ -705,3 +706,15 @@ texture = ExtResource("13_2k5m6")
 [node name="Goal" parent="." instance=ExtResource("14_cpqf6")]
 position = Vector2(0, -283)
 collision_mask = 3
+
+[node name="PlayerA_Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(510, 157)
+zoom = Vector2(4, 4)
+script = ExtResource("14_0nqj5")
+player = NodePath("../Player_A")
+
+[node name="PlayerB_Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(246, -159)
+zoom = Vector2(4, 4)
+script = ExtResource("14_0nqj5")
+player = NodePath("../Player_B")
