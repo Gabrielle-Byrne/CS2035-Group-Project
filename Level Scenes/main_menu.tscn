@@ -46,15 +46,15 @@ autoplay = true
 parameters/looping = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 201.0
-offset_top = 264.0
-offset_right = 330.0
-offset_bottom = 361.0
+z_index = 11
+offset_left = 138.0
+offset_top = 314.0
+offset_right = 370.0
+offset_bottom = 504.0
 theme = SubResource("Theme_ci7x6")
 text = "< -This is Allen
 This is Bugby ->
-They must work
-together"
+Allen's friends are stranded! They must work together to save them. "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -66,21 +66,21 @@ texture = ExtResource("6_tcpys")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = 195.0
-offset_top = 265.0
-offset_right = 333.0
-offset_bottom = 384.0
+offset_left = 138.0
+offset_top = 341.0
+offset_right = 372.0
+offset_bottom = 477.0
 color = Color(0.176471, 0.768627, 0.341176, 1)
 
 [node name="Allen" type="Sprite2D" parent="."]
-position = Vector2(132, 305)
+position = Vector2(147, 345)
 scale = Vector2(4.04167, 4.41667)
 texture = ExtResource("7_nsy20")
 region_enabled = true
 region_rect = Rect2(0, 0, 24, 24.5)
 
 [node name="Bugby" type="Sprite2D" parent="."]
-position = Vector2(391, 294)
+position = Vector2(366, 347)
 scale = Vector2(4.04167, 4.41667)
 texture = ExtResource("7_nsy20")
 region_enabled = true
