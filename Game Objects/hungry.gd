@@ -15,6 +15,8 @@ $AnimatedSprite2D/ray4, $AnimatedSprite2D/ray5, $AnimatedSprite2D/ray6, $Animate
 
 @onready var timer: Timer = $Timer
 
+@onready var visionCone: Polygon2D = $AnimatedSprite2D/Polygon2D
+
 var direction: Vector2
 var left_wander_bounds: Vector2
 var right_wander_bounds: Vector2
@@ -32,9 +34,9 @@ var current_state = States.IDLE
 
 func _ready():
 	left_wander_bounds = self.position + Vector2(-50, 0)
-	print(left_wander_bounds)
+
 	right_wander_bounds = self.position + Vector2(50, 0)
-	print(right_wander_bounds)
+	
 	currentScaleX = currentScaleX * self.scale.x
 	currentScaleY = currentScaleY * self.scale.x
 
@@ -44,11 +46,18 @@ func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	change_direction()
 	look_for_food()
+	set_vision_color()
 	
 	if current_state == States.WANDER or current_state == States.CHASE:
 		sprite.play("walking")
 	elif current_state == States.IDLE:
 		sprite.play("sleeping")
+
+func set_vision_color() -> void:
+		if current_state == States.IDLE or current_state == States.WANDER:
+			visionCone.color = Color(255, 255, 0, 0.46)
+		elif current_state == States.CHASE:
+			visionCone.color = Color(255, 0, 0, 0.541)
 
 func look_for_food():
 	for ray in rays:

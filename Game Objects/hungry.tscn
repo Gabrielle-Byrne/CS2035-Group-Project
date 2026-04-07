@@ -58,7 +58,7 @@ animation = &"walking"
 [node name="Polygon2D" type="Polygon2D" parent="AnimatedSprite2D"]
 z_index = -1
 scale = Vector2(0.520833, 0.511627)
-color = Color(1, 1, 0, 0.180392)
+color = Color(1, 1, 0, 0.46)
 polygon = PackedVector2Array(-116, -46, 0, -1, -115, 30)
 
 [node name="ray1" type="RayCast2D" parent="AnimatedSprite2D"]
