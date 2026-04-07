@@ -6,6 +6,8 @@ const PUSH_FORCE = 50
 const MAX_VELOCITY = 100
 var has_key = false
 
+@export var wind_speed = 0
+
 var is_in_range: bool = false
 var target_object: Node2D
 
@@ -37,23 +39,22 @@ func _physics_process(delta: float) -> void:
 		position.x = 100;
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("a_left", "a_right")
 	if direction:
 		velocity.x = direction * SPEED
 		$AnimatedSprite2D.play("A")
-		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.stop()
 		
-	if(Input.is_action_just_pressed("a_left")):
+	if Input.is_action_just_pressed("a_left"):
 		$AnimatedSprite2D.flip_h = false
 		facingDirection = "left"
-	if(Input.is_action_just_pressed("a_right")):
+	if Input.is_action_just_pressed("a_right"):
 		$AnimatedSprite2D.flip_h = true
 		facingDirection = "right"
-		
+	
+	# Handle pushing blocks (CharacterBody2D version)
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var block = collision.get_collider()
@@ -69,6 +70,10 @@ func _physics_process(delta: float) -> void:
 		drop_object()
 	else:
 		pickup_object()
+	
+		
+	velocity.x -= wind_speed
+	wind_speed = 0
 	move_and_slide()
 
 func pickup_object() -> void:
@@ -78,19 +83,18 @@ func pickup_object() -> void:
 			held_object.is_carried = true
 			held_object.reparent(carry_position)
 			held_object.position = carry_position.position
-			
 
 func drop_object() -> void:
 	if held_object:
 		if Input.is_action_just_pressed("a_pickup"):
-				held_object.reparent(get_tree().current_scene)
-				if facingDirection == "left":
-					held_object.position  = position + Vector2.LEFT * 20
-				elif facingDirection == "right":
-					held_object.position  = position + Vector2.RIGHT * 20
-				held_object.is_carried = false
-				held_object = null
-				
+			held_object.reparent(get_tree().current_scene)
+			if facingDirection == "left":
+				held_object.position = position + Vector2.LEFT * 20
+			elif facingDirection == "right":
+				held_object.position = position + Vector2.RIGHT * 20
+			held_object.is_carried = false
+			held_object = null
+			
 func _on_pickup_range_body_entered(body: Node2D) -> void:
 	if body is Carryable:
 		is_in_range = true
