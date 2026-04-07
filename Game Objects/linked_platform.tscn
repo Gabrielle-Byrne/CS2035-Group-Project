@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_qb4xh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uspq7"]
-size = Vector2(86, 67.5)
+size = Vector2(86, 21.5)
 
 [node name="LinkedPlatform" type="Node2D"]
 script = ExtResource("1_q67mn")
@@ -16,7 +16,7 @@ tile_set = ExtResource("2_qb4xh")
 [node name="BoxDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxDetector"]
-position = Vector2(8, -35.25)
+position = Vector2(8, -12.25)
 shape = SubResource("RectangleShape2D_uspq7")
 
 [connection signal="body_entered" from="BoxDetector" to="." method="_on_box_detector_body_entered"]

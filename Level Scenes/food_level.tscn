@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dk50dnc05e71v" path="res://Player/player-A.tscn" id="2_hfkyv"]
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="3_wtoaq"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="4_2rxg5"]
-[ext_resource type="PackedScene" uid="uid://d1cxtanca3cgl" path="res://Game Objects/hungry.tscn" id="5_hfkyv"]
+[ext_resource type="PackedScene" path="res://Game Objects/hungry.tscn" id="5_hfkyv"]
 [ext_resource type="PackedScene" uid="uid://dhgxh8alcsgk3" path="res://Game Objects/block.tscn" id="6_wtoaq"]
 
 [node name="Food_level" type="Node2D"]
