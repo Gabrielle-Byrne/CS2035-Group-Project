@@ -55,6 +55,12 @@ scale = Vector2(1.92, 1.95455)
 sprite_frames = SubResource("SpriteFrames_h7imd")
 animation = &"walking"
 
+[node name="Polygon2D" type="Polygon2D" parent="AnimatedSprite2D"]
+z_index = -1
+scale = Vector2(0.520833, 0.511627)
+color = Color(1, 1, 0, 0.180392)
+polygon = PackedVector2Array(-116, -46, 0, -1, -115, 30)
+
 [node name="ray1" type="RayCast2D" parent="AnimatedSprite2D"]
 target_position = Vector2(-60, -21)
 collision_mask = 3
@@ -93,7 +99,7 @@ enabled = false
 target_position = Vector2(-25, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]

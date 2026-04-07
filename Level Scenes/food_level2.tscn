@@ -699,11 +699,11 @@ tile_map_data = PackedByteArray("AADc/xAAAQACAAEAAADd/xAAAQACAAAAAADe/xAAAQACAAA
 tile_set = SubResource("TileSet_4ak3y")
 
 [node name="Player_A" parent="." instance=ExtResource("3_ns16m")]
-position = Vector2(-600, 269)
+position = Vector2(-600, 275)
 collision_mask = 3
 
 [node name="Player_B" parent="." instance=ExtResource("4_b4lik")]
-position = Vector2(600, 265)
+position = Vector2(600, 276)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -713,7 +713,7 @@ zoom = Vector2(1.5, 1.5)
 position = Vector2(334, 170)
 
 [node name="food2" parent="." instance=ExtResource("6_3nrl7")]
-position = Vector2(32, 167)
+position = Vector2(32, 170)
 
 [node name="food3" parent="." instance=ExtResource("6_3nrl7")]
 position = Vector2(-136, 99)
