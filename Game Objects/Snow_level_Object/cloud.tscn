@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=4 uid="uid://dedp1f5x5ogk0"]
+
+[ext_resource type="Script" uid="uid://crxf2ulcnj86o" path="res://Game Objects/Snow_level_Object/cloud.gd" id="1_2m3ul"]
+[ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="1_lygkj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2m3ul"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(30, 15, 10)
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 61.926
+gravity = Vector3(-200, 0, 0)
+turbulence_noise_strength = 5.39
+turbulence_noise_speed_random = 1.77
+collision_mode = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2m3ul"]
+radius = 14.0
+height = 50.0
+
+[node name="Cloud" type="StaticBody2D"]
+script = ExtResource("1_2m3ul")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQANAAcAAAABAAAAAQAOAAcAAAACAAAAAQAPAAcAAAACAP//AQANAAcAADAAAP//AQAPAAcAADABAP//AQAOAAcAADA=")
+tile_set = ExtResource("1_lygkj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(23, -1)
+amount = 10000
+lifetime = 6.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_2m3ul")
+
+[node name="WindAreas" type="Node2D" parent="."]
+
+[node name="WindArea1" type="RayCast2D" parent="WindAreas"]
+position = Vector2(24, -1)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea2" type="RayCast2D" parent="WindAreas"]
+position = Vector2(23, 3)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea3" type="RayCast2D" parent="WindAreas"]
+position = Vector2(22, 7)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea4" type="RayCast2D" parent="WindAreas"]
+position = Vector2(23, 10)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea5" type="RayCast2D" parent="WindAreas"]
+position = Vector2(22, -5)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea6" type="RayCast2D" parent="WindAreas"]
+position = Vector2(22, -9)
+target_position = Vector2(-700, 0)
+
+[node name="WindArea7" type="RayCast2D" parent="WindAreas"]
+position = Vector2(24, 4)
+target_position = Vector2(-700, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2m3ul")
