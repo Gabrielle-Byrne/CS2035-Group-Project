@@ -37,6 +37,7 @@ text = "START!"
 position = Vector2(578, 414)
 
 [node name="Player_B" parent="." instance=ExtResource("5_ci7x6")]
+visible = true
 position = Vector2(653, 411)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -84,5 +85,9 @@ scale = Vector2(4.04167, 4.41667)
 texture = ExtResource("7_nsy20")
 region_enabled = true
 region_rect = Rect2(153, 24.5, 21, 24)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(650, 369)
+zoom = Vector2(0.9, 0.9)
 
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
