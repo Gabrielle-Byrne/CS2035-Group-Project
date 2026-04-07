@@ -33,8 +33,8 @@ enum States{
 var current_state = States.IDLE
 
 func _ready():
-	left_wander_bounds = self.position + Vector2(-50, 0)
-	right_wander_bounds = self.position + Vector2(50, 0)
+	left_wander_bounds = self.position + Vector2(-150, 0)
+	right_wander_bounds = self.position + Vector2(150, 0)
 	
 	currentScaleX = currentScaleX * self.scale.x
 	currentScaleY = currentScaleY * self.scale.x
@@ -203,23 +203,23 @@ func _on_timer_timeout() -> void:
 	current_state = States.WANDER # Replace with function body.
 
 
-func _on_turn_around_zone_turn_around() -> void:
+func _on_turn_around_zone_turn_around(body) -> void:
 	print("Turning")
-	for ray in rays:
+	for ray in body.rays:
 		ray.enabled = false
 			
-	if direction.x == 1:
-		direction = Vector2(-1, 0)
-		sprite.scale.x = currentScaleX
-	elif direction.x == -1:
-		direction = Vector2(1, 0)
-		sprite.scale.x = -currentScaleX
+	if body.direction.x == 1:
+		body.direction = Vector2(-1, 0)
+		body.sprite.scale.x = body.currentScaleX
+	elif body.direction.x == -1:
+		body.direction = Vector2(1, 0)
+		body.sprite.scale.x = -body.currentScaleX
 		
-	if current_state == States.CHASE:
-		current_state = States.WANDER
+	if body.current_state == States.CHASE:
+		body.current_state = States.WANDER
 		
 	#Once turned around, re-enable the rays
-	for ray in rays:
+	for ray in body.rays:
 		ray.enabled = true
 		
 	#return  

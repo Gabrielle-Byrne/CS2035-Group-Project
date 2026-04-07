@@ -5,4 +5,4 @@ signal turnAround
 func _on_body_entered(body: Node2D) -> void:
 	print("Entered")
 	if body.is_in_group("HungryBoi"):
-		turnAround.emit()
+		turnAround.emit(body)

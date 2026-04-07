@@ -728,12 +728,20 @@ position = Vector2(-475, 243)
 position = Vector2(-429, 297)
 
 [node name="Hungry2" parent="." instance=ExtResource("5_hfkyv")]
-position = Vector2(245, 284)
+position = Vector2(243, 285)
 
 [node name="Hungry3" parent="." instance=ExtResource("5_hfkyv")]
-position = Vector2(389, 86)
+position = Vector2(387, 87)
 
 [node name="turnAroundZone" parent="." instance=ExtResource("11_bxdng")]
 position = Vector2(-322, 284)
 
+[node name="turnAroundZone2" parent="." instance=ExtResource("11_bxdng")]
+position = Vector2(273, 285)
+
+[node name="turnAroundZone3" parent="." instance=ExtResource("11_bxdng")]
+position = Vector2(417, 87)
+
 [connection signal="turnAround" from="turnAroundZone" to="Hungry" method="_on_turn_around_zone_turn_around"]
+[connection signal="turnAround" from="turnAroundZone2" to="Hungry" method="_on_turn_around_zone_turn_around"]
+[connection signal="turnAround" from="turnAroundZone3" to="Hungry" method="_on_turn_around_zone_turn_around"]
