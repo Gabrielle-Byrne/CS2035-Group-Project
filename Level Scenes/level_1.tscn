@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bx8n7dfsjxer7"]
+[gd_scene load_steps=12 format=4 uid="uid://bx8n7dfsjxer7"]
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://Level Scenes/main.gd" id="1_nsi6k"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_c1vm0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://fvgtoouv355x" path="res://Game Objects/instruction_a.gd" id="7_c1vm0"]
 [ext_resource type="AudioStream" uid="uid://b7l61cjbep3d1" path="res://Sound_Music/mondamusic-retro-arcade-game-music-491667.mp3" id="9_gy5sw"]
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="10_gy5sw"]
+[ext_resource type="Script" uid="uid://h4hw0ka00rvi" path="res://Level Scenes/player_camera.gd" id="11_1xul6"]
 [ext_resource type="PackedScene" uid="uid://b2aqu2rkyuhm0" path="res://Game Objects/lock.tscn" id="11_eajg8"]
 
 [node name="Level_1" type="Node2D"]
@@ -30,7 +31,7 @@ position = Vector2(-369, 155)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Wide_Camera" type="Camera2D" parent="."]
 zoom = Vector2(1.35, 1.35)
 
 [node name="Block" parent="." instance=ExtResource("5_gy5sw")]
@@ -87,6 +88,9 @@ position = Vector2(393, 90)
 
 [node name="Lock" parent="." instance=ExtResource("11_eajg8")]
 position = Vector2(361, 99)
+
+[node name="PlayerA_Camera" type="Camera2D" parent="."]
+script = ExtResource("11_1xul6")
 
 [connection signal="keyed" from="Key" to="Player_A" method="_on_key_keyed"]
 [connection signal="keyed" from="Key" to="Player_B" method="_on_key_keyed"]
