@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dpenxg0s3f7k8"]
+[gd_scene load_steps=11 format=4 uid="uid://c1lbsx8b6qe7u"]
 
 [ext_resource type="Script" uid="uid://dg6rfdj5md3wf" path="res://Level Scenes/main.gd" id="1_2oiru"]
 [ext_resource type="TileSet" uid="uid://b6thyybno765x" path="res://TileSets-Sprites/tileset_environment.tres" id="2_tvcqr"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="9_60bqr"]
 [ext_resource type="PackedScene" uid="uid://b2aqu2rkyuhm0" path="res://Game Objects/lock.tscn" id="10_f728c"]
 
-[node name="Level_1" type="Node2D"]
+[node name="Level_3" type="Node2D"]
 script = ExtResource("1_2oiru")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -37,11 +37,7 @@ position = Vector2(-127, -93)
 [node name="Key" parent="." instance=ExtResource("6_w82x7")]
 position = Vector2(-158, 12)
 
-[node name="Key2" parent="." instance=ExtResource("6_w82x7")]
-position = Vector2(-94, -127)
-
 [node name="InstructionA" type="Label" parent="." node_paths=PackedStringArray("A", "B")]
-visible = false
 offset_left = -319.0
 offset_top = -145.0
 offset_right = -221.0
@@ -54,7 +50,6 @@ A = NodePath("../Player_A")
 B = NodePath("../Player_B")
 
 [node name="InstructionB" type="Label" parent="." node_paths=PackedStringArray("A", "B")]
-visible = false
 offset_left = -319.0
 offset_top = 126.0
 offset_right = -221.0

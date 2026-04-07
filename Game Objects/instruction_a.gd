@@ -5,11 +5,6 @@ extends Label
 var fade = 300
 var min_alpha = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if A or B:
 		var distanceA = global_position.distance_to(A.global_position)

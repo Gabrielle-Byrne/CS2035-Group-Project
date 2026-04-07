@@ -76,5 +76,7 @@ stream = ExtResource("3_vqe88")
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="." groups=["Player"]]
 stream = ExtResource("4_jff03")
 
+[node name="CameraA" type="Camera2D" parent="."]
+
 [connection signal="body_entered" from="PickupRange" to="." method="_on_pickup_range_body_entered"]
 [connection signal="body_exited" from="PickupRange" to="." method="_on_pickup_range_body_exited"]
