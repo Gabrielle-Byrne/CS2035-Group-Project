@@ -48,12 +48,14 @@ parameters/looping = false
 offset_left = 201.0
 offset_top = 264.0
 offset_right = 330.0
-offset_bottom = 368.0
+offset_bottom = 361.0
 theme = SubResource("Theme_ci7x6")
 text = "< -This is Allen
-This is Buge ->
+This is Bugby ->
 They must work
 together"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Tilemap-backgroundsPacked" type="Sprite2D" parent="."]
 z_index = -1
@@ -66,7 +68,7 @@ z_index = -1
 offset_left = 195.0
 offset_top = 265.0
 offset_right = 333.0
-offset_bottom = 369.0
+offset_bottom = 384.0
 color = Color(0.176471, 0.768627, 0.341176, 1)
 
 [node name="Allen" type="Sprite2D" parent="."]
@@ -76,8 +78,8 @@ texture = ExtResource("7_nsy20")
 region_enabled = true
 region_rect = Rect2(0, 0, 24, 24.5)
 
-[node name="Allen2" type="Sprite2D" parent="."]
-position = Vector2(399, 310)
+[node name="Bugby" type="Sprite2D" parent="."]
+position = Vector2(391, 294)
 scale = Vector2(4.04167, 4.41667)
 texture = ExtResource("7_nsy20")
 region_enabled = true
