@@ -6,19 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://d0o22jfl4fy15" path="res://Player/player-B.tscn" id="4_lquwl"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_h2yge")
+script = ExtResource("1_o0oj6")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-40, -18)
 tile_map_data = PackedByteArray("AAADAA0AAQACAAAAAAAEAA0AAQACAAAAAAAFAA0AAQACAAAAAAAGAA0AAQACAAAAAAAHAA0AAQACAAAAAAAIAA0AAQACAAAAAAAJAA0AAQACAAAAAAAKAA0AAQACAAAAAAALAA0AAQACAAAAAAAMAA0AAQACAAAAAAANAA0AAQACAAAAAAAOAA0AAQACAAAAAAAPAA0AAQACAAAAAAAQAA0AAQACAAAAAAARAA0AAQACAAAAAAASAA0AAQACAAAAAAATAA0AAQACAAAAAAAUAA0AAQACAAAAAAAUAAwAAQACAAAAAAAUAAsAAQACAAAAAAAVAAsAAQACAAAAAAAVAAwAAQACAAAAAAAVAA0AAQACAAAAAAAWAA0AAQACAAAAAAAWAAwAAQACAAAAAAAWAAsAAQACAAAAAAAWAAoAAQACAAAAAAAWAAkAAQACAAAAAAAXAAkAAQACAAAAAAAXAAoAAQACAAAAAAAXAAsAAQACAAAAAAAYAAsAAQACAAAAAAAYAAwAAQACAAAAAAAYAA0AAQACAAAAAAAXAA0AAQACAAAAAAAXAAwAAQACAAAAAAA=")
-tile_set = ExtResource("1_ig7tw")
+tile_set = ExtResource("2_uoob5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(135, 110)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Player_A" parent="." instance=ExtResource("3_1bvp3")]
+[node name="Player_A" parent="." instance=ExtResource("3_l0awm")]
 position = Vector2(78, 146)
 
-[node name="Player_B" parent="." instance=ExtResource("4_lquwl")]
+[node name="Player_B" parent="." instance=ExtResource("4_6wydo")]
 position = Vector2(208, 135)
