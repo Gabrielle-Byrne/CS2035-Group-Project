@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://d1cxtanca3cgl" path="res://Game Objects/hungry.tscn" id="5_u6bpj"]
 [ext_resource type="PackedScene" uid="uid://digtk2xrf7k1e" path="res://Game Objects/food.tscn" id="6_3nrl7"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="7_fkers"]
-[ext_resource type="PackedScene" uid="uid://dtixlilhvy54d" path="res://Game Objects/button.tscn" id="11_3nrl7"]
 [ext_resource type="PackedScene" uid="uid://bx8hviq51rlpb" path="res://Game Objects/turn_around_zone.tscn" id="12_qljit"]
 [ext_resource type="Texture2D" uid="uid://bxoitjh10i1y4" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="13_2k5m6"]
+[ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="14_cpqf6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_43dj5"]
 tile_data = PackedInt32Array(0, 393217, 2, 65536, 393217, 2, 131072, 393217, 2, 196608, 393217, 2, 262144, 393217, 2, 1, 393217, 2, 65537, 393217, 2, 131073, 393217, 2, 196609, 393217, 2, 262145, 393217, 2, 2, 393217, 2, 65538, 393217, 2, 131074, 393217, 2, 196610, 393217, 2, 262146, 393217, 2, 3, 393217, 2, 65539, 393217, 2, 131075, 393217, 2, 196611, 393217, 2, 262147, 393217, 2, 4, 393217, 2, 65540, 393217, 2, 131076, 393217, 2, 196612, 393217, 2, 262148, 393217, 2, 5, 458753, 2, 65541, 458753, 2, 131077, 458753, 2, 196613, 458753, 2, 262149, 458753, 2)
@@ -643,7 +643,8 @@ position = Vector2(-600, 275)
 collision_mask = 3
 
 [node name="Player_B" parent="." instance=ExtResource("4_b4lik")]
-position = Vector2(600, 276)
+visible = true
+position = Vector2(593, 274)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -683,10 +684,6 @@ position = Vector2(523, 159)
 [node name="carryableBlock" parent="." instance=ExtResource("7_fkers")]
 position = Vector2(-107, 0)
 
-[node name="Button" parent="." instance=ExtResource("11_3nrl7")]
-visible = false
-position = Vector2(286, -81)
-
 [node name="Hungry6" parent="." instance=ExtResource("5_u6bpj")]
 position = Vector2(-107, 33)
 scale = Vector2(-1, 1)
@@ -698,9 +695,13 @@ position = Vector2(219, 160)
 position = Vector2(-272, 34)
 
 [node name="Background" type="TextureRect" parent="."]
-z_index = -2
+z_index = -10
 offset_left = -3171.0
 offset_top = -536.0
 offset_right = 1897.0
 offset_bottom = 373.0
 texture = ExtResource("13_2k5m6")
+
+[node name="Goal" parent="." instance=ExtResource("14_cpqf6")]
+position = Vector2(0, -283)
+collision_mask = 3

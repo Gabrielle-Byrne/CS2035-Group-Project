@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c0ivw3xlujf4k"]
+[gd_scene load_steps=21 format=4 uid="uid://c0ivw3xlujf4k"]
 
 [ext_resource type="Script" uid="uid://b876sisehlmhp" path="res://Level Scenes/food_level.gd" id="1_4k2bo"]
 [ext_resource type="Texture2D" uid="uid://bxoitjh10i1y4" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_4ak3y"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://digtk2xrf7k1e" path="res://Game Objects/food.tscn" id="7_4k2bo"]
 [ext_resource type="PackedScene" uid="uid://cy3ggnghsl85s" path="res://Game Objects/carryableBlock.tscn" id="7_8ak3n"]
 [ext_resource type="PackedScene" uid="uid://bx8hviq51rlpb" path="res://Game Objects/turn_around_zone.tscn" id="11_bxdng"]
+[ext_resource type="PackedScene" uid="uid://5rj5qeul4jxm" path="res://Game Objects/goal.tscn" id="14_x1yft"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_43dj5"]
 tile_data = PackedInt32Array(0, 393217, 2, 65536, 393217, 2, 131072, 393217, 2, 196608, 393217, 2, 262144, 393217, 2, 1, 393217, 2, 65537, 393217, 2, 131073, 393217, 2, 196609, 393217, 2, 262145, 393217, 2, 2, 393217, 2, 65538, 393217, 2, 131074, 393217, 2, 196610, 393217, 2, 262146, 393217, 2, 3, 393217, 2, 65539, 393217, 2, 131075, 393217, 2, 196611, 393217, 2, 262147, 393217, 2, 4, 393217, 2, 65540, 393217, 2, 131076, 393217, 2, 196612, 393217, 2, 262148, 393217, 2, 5, 458753, 2, 65541, 458753, 2, 131077, 458753, 2, 196613, 458753, 2, 262149, 458753, 2)
@@ -635,9 +636,9 @@ script = ExtResource("1_4k2bo")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
-offset_left = -2438.0
+offset_left = -2437.0
 offset_top = -376.0
-offset_right = 1438.0
+offset_right = 1439.0
 offset_bottom = 413.0
 texture = ExtResource("2_4ak3y")
 
@@ -689,6 +690,10 @@ position = Vector2(273, 285)
 
 [node name="turnAroundZone3" parent="." instance=ExtResource("11_bxdng")]
 position = Vector2(417, 87)
+
+[node name="Goal" parent="." instance=ExtResource("14_x1yft")]
+position = Vector2(-104, -158)
+collision_mask = 3
 
 [connection signal="turnAround" from="turnAroundZone" to="Hungry" method="_on_turn_around_zone_turn_around"]
 [connection signal="turnAround" from="turnAroundZone2" to="Hungry" method="_on_turn_around_zone_turn_around"]
